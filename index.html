@@ -27,39 +27,20 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
+                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html">Xiang</a>
         </div>
 
+
         <div class="collapse navbar-collapse" id="myNavbar">
-
             <ul class="nav navbar-nav navbar-right" id="myNav">
-                <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTML <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#" style = "border-top-color: transparent">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">CSS <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" style = "border-top-color: transparent">Page 1-1</a></li>
-                        <li class="disabled"><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">JavaScript <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" style = "border-top-color: transparent">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-
+                <li class="active "><a data-toggle="pill" href="#home">Home</a></li>
+                <li><a data-toggle="pill" href="#section1">Resume</a></li>
+                <li><a data-toggle="pill" href="#section2">About</a></li>
+                <li><a data-toggle="pill" href="#section3">Section 3</a></li>
+                <li><a data-toggle="pill" href="#section4">Section 4</a></li>
+        
                 <li>
                     <ul class="nav navbar-nav social-media-list">
                         <li>
@@ -87,12 +68,14 @@
                                 <i class='fa fa-qq social-media-icon'></i>
                             </a>
                         </li>
+                        <li>
+                            <a class="social-media-link" href="https://github.com/" target="_blank">
+                                <i class='fab fa-github social-media-icon'></i>
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                
-                
             </ul>
-            
         </div>
     </div>
 </nav>
@@ -131,6 +114,7 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
                     </ol>
             
                     <!-- img -->
@@ -139,10 +123,13 @@
                             <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png">
                         </div>
                         <div class="item">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p3.jpg">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg">
                         </div>
                         <div class="item">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/bg2.jpg">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p6.jpg">
+                        </div>
+                        <div class="item">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg">
                         </div>
                     </div>
             
@@ -163,117 +150,82 @@
 
 
 <div class = "container-fluid bg2">
+    <div class="row" style="height:50px"></div>
+
     <div class="row content">
-        <!----- sidebar ----->
-        <div class="col-sm-2 side"><br>
-            <div style="text-align: center">
-                <a href="index.html">
-                    <img class="img-responsive img-rounded" src="images/X.png" style="max-height:150px; max-width:150px; margin: auto">
-                </a>    
-            </div><br>
-
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-                <li><a data-toggle="pill" href="#section1">Section 1</a></li>
-                <li><a data-toggle="pill" href="#section2">Section 2</a></li>
-                <li><a data-toggle="pill" href="#section3">Section 3</a></li>
-                <li><a data-toggle="pill" href="#section4">Section 4</a></li>
-            </ul><hr>
-
-            <form class="nav nav-pills nav-stacked">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" class="form-control" placeholder="First Name" maxlength="10">
-                </div><br>
-                <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" class="form-control" placeholder="Last Name" size="10">
-                </div><br>
-                <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
-                        <input type="email" class="form-control" placeholder="Email">
-                </div><br>
-            </form>
-        </div>
-
-        <div class="col-sm-8">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-8 side">
             <!-- tab content list -->
             <div class="tab-content">
                 <!-- Home content -->
                 <div id="home" class="tab-pane fade in active">
-                    <div>
-                        <h1 class="homeHeader">My Home</h1>
-                    </div>
-                    
-                    
-                </div>
-
-                <!-- section 1 content -->
-                <div id="section1" class="tab-pane fade">
-                    <h1> MY section 1</h1>
-                    <div class="container">
-                        <div class="frame">
-                            <div id="hero">
-
-                            </div>
-
-                        </div><br>
-
-                        <div class="controller">                            
-                            <button type="button" class="action" onclick="goRight()">Right</button>                          
-                            <button type="button" class="action" onclick="goLeft()">Left</button>                           
-                            <button type="button" class="action" onclick="goUp()">Up</button>                           
-                            <button type="button" class="action" onclick="goDown()">Down</button>                            
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="myimg img-responsive img-rounded opacity-effect" src="images/p9.jpg">
+                        </div>
+                        <div class="col-sm-6">
+                            <h1>Heading</h1>    
+                            <p>content</p>
                         </div>
                     </div>
+
+                    <div class="row" style="height:35px"></div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1>An Adventure in the Hills</h1>
+                            <p>“I cannot tell,” she returned, “but you may come with me, if you like. If Oz will not give you any brains you will be no worse off than you are now.”</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="myimg img-responsive img-rounded opacity-effect" src="images/p10.jpg">
+                        </div>
+                        
+                    </div>
+
+                    <div class="row" style="height:35px"></div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="myimg img-responsive img-rounded opacity-effect" src="images/p10.jpg">
+                        </div>
+                        <div class="col-sm-6">
+                            <h1>Heading</h1>
+                            <p>content</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Home tab -->
             
+                <!-- section 1 content -->
+                <div id="section1" class="tab-pane fade">
+                    <h1> MY resume</h1>
                     
-
-                    
+            
                 </div>
-
+            
                 <div id="section2" class="tab-pane fade">
-                    <h1> MY section 2</h1>
+                    <h1> About</h1>
                 </div>
-
+            
                 <div id="section3" class="tab-pane fade">
                     <h1> MY section 3</h1>
                 </div>
-
+            
                 <div id="section4" class="tab-pane fade">
                     <h1> MY section 4</h1>
                 </div>
             </div>
         </div>
 
-        
-        <div class="col-sm-2 side">
-            <div>
-                Content to be added!
-            </div>
+        <div class="col-sm-3 side">
+            <p>side info</p>
         </div>
+
     </div>
     
 </div>
 
-<script>
-function loadDocc(){
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function (){
-        if(this.readyState == 4 && this.status == 200){
-            document.getElementById("test").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("POST", "testaa.txt", true);
-    xhttp.send();
-}
-</script>
 
-
-<script src="JS/hero.js"></script>
-<script src="JS/home1.js"></script>
-<script src="JS/testJS.js"></script>
 <script src="JS/homePage.js"></script>
 </body>
 </html>
