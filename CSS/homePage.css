@@ -1,0 +1,164 @@
+/******************************* Background ****************************/
+.bg2 {
+    background-image: url('../images/blue-background.jpg');
+}
+
+.bg1 {
+    /* background-image: url('../images/star1.png'); */
+    background-color: #384750;
+    height: auto;
+}
+
+/***************************** navbar *********************************/
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default{
+    background-color: #2c3235;
+    /* background: linear-gradient(225deg, #38b5d4 1%, #f3edd9 41.53%, #7fabb6 100%); */
+    border-color: #2c3235;
+    padding: 2px; 
+}
+
+.navbar-brand { 
+    font-size: 30px;
+    font-weight: 530;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.navbar-default .navbar-brand {
+    color: #f9fdfe;
+}
+
+
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: rgb(241, 132, 81);
+    background-color: transparent;
+}
+
+.navbar-nav>li>a {
+    color: #8b949a;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: beige;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+}
+
+
+
+@media (max-width: 767px){
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #8e7ca0;
+}
+}
+
+.navbar-default .navbar-right>li>a:visited {
+    border: 25px solid;
+}
+
+.dropdown-menu{
+    box-shadow: 0px 2px 5px 0px #ccc;
+    background-color: rgb(227, 202, 245);
+    min-width: 100px;
+}
+
+.dropdown-menu>li>a{
+    border: 1px solid transparent;
+    border-top-color: blanchedalmond;
+    padding: 5px;
+    color: #8e7ca0;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #e6d4ee;
+    text-decoration: none;
+    background-color: #de9eee;
+}
+
+
+.side{
+    height: 100%;
+}
+
+
+@media screen and (max-width:767px){
+    .row.content {height: auto;}
+}
+
+
+.social-menu-item {
+    display: inline-block;
+}
+
+/************************* Home page ********************************/
+.home-header {
+    height: 100%;
+}
+
+.home-header-img {
+    padding: 50px 0;
+    margin: auto;
+}
+
+.about-me-header {
+    font-size: 30px;
+    text-align: center;
+    color: #edf7f9;
+    text-decoration: underline;
+}
+
+.about-me-content {
+    background-color: transparent;
+    font-size: 16px;
+    padding: 5px;
+    line-height: 2.5;
+    text-align: left;
+    color: #f9fdfe;
+    border: 1px solid #f9fdfe;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+/*------------------------ image slide show ---------------------------*/
+.imgSlide {
+    padding: 5px;
+    margin: 5px;
+}
+
+
+.myimg {
+    width: 100%;
+    height: auto;
+}
+
+.zoom-effect {
+    transition: transform 0.3s;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.1);
+}
+
+
+/*----------------------------- Login --------------------------------------*/
+.modal-title{
+    text-align: center;
+    color: #1fb5e2;
+}
+
+.imgLogin{
+    border-radius: 50%;
+    margin: auto;
+    max-width: 150px;
+    max-height: 120px;
+}
