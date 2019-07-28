@@ -96,8 +96,22 @@
 }
 
 
-.social-menu-item {
-    display: inline-block;
+
+.social-media-list {
+    margin-top: 12px;
+    margin-left: 30px;
+    margin-right: 12px;
+}
+
+.social-media-link {
+    padding: 0px !important;
+}
+
+.social-media-icon {
+    font-size:22px;
+    color: #e6e8e9;
+    margin-left: 12px;
+    
 }
 
 /************************* Home page ********************************/
