@@ -10,3 +10,17 @@ $("#searchBtn").on("click", function () {
     });
 });
 
+$('body').scrollspy({ target: "#to-contect", offset: 50 });
+
+// $('#dropdown').on("mouseenter", function () {
+//     $('.dropdown-menu').slideToggle(200);
+    
+// });
+
+// $('#dropdown').on("mouseleave", function () {
+//     $('.dropdown-menu').slideToggle(200);
+// });
+
+
+
+
