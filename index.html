@@ -21,6 +21,7 @@
     
 
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
+    <script src="JS/homePage.js"></script>
     
     </head>
 
@@ -54,8 +55,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="tab-link" data-toggle="pill" href="#section3">Gallary</a></li>
-                        <li><a class="tab-link" data-toggle="pill" href="#">Music</a></li>
+                        <li><a class="tab-link" data-toggle="pill" href="#myGallary">Gallary</a></li>
+                        <li><a class="tab-link" data-toggle="pill" href="#xx">Music</a></li>
                         <li><a class="tab-link" data-toggle="pill" href="#myProject">Project</a></li>
                     </ul>
                 </li>
@@ -136,16 +137,16 @@
                     <!-- img -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png" alt="image-1">
                         </div>
                         <div class="item">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg" alt="image-2">
                         </div>
                         <div class="item">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p6.jpg">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p6.jpg" alt="image-3">
                         </div>
                         <div class="item">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg">
+                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg" alt="image-4">
                         </div>
                     </div>
             
@@ -166,14 +167,16 @@
 </div>
 
 <div class = "container-fluid bg2">
-    <div class="row" style="height:50px"></div>
-
+    <div class="row" style="height:50px">
+        
+        
+    </div>
     <div class="row content">
         <div class="col-sm-1"></div>
         <div class="col-sm-8 side">
             <!-- tab content list -->
             <div class="tab-content">
-                <!-- Home content -->
+<!---------------------------------------- Home content ---------------------------------------->
                 <div id="home" class="tab-pane fade in active">
                     <div class="row">
                         <div class="col-sm-6">
@@ -228,60 +231,114 @@
                     <h1>My Projects</h1>
                 </div>
             
-                <div id="section4" class="tab-pane fade">
-                    <h1> MY section 4</h1>
+                <div id="myGallary" class="tab-pane fade">
+                    <h1> MY Gallary</h1>
+                    <div class="gallary">
+                        <div class="gallary-col">
+                            <img class="myimg img-responsive opacity-effect" src="images/s2.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s3.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s4.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s8.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s5.jpeg">
+                        </div>
+                        <div class="gallary-col">
+                            <img class="myimg img-responsive opacity-effect" src="images/s10.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s11.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s4.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s8.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s4.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s8.jpg">
+                        </div>
+                        <div class="gallary-col">
+                            <img class="myimg img-responsive opacity-effect" src="images/s5.jpeg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s6.jpeg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s12.jpeg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s10.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s11.jpg">
+                        </div>
+                        <div class="gallary-col">
+                            <img class="myimg img-responsive opacity-effect" src="images/s10.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s11.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s4.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s8.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s4.jpg">
+                            <img class="myimg img-responsive opacity-effect" src="images/s8.jpg">
+                        </div>
+                    </div>
                 </div>
 
+<!--------------------------------------------- Personal Project site -------------------------------------->
                 <div id="myProject" class="tab-pane fade">
-                    
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="project-block">
-                                    <div class="project-img">
-                                        <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
-                                            <img class="myimg img-responsive zoom-effect" src="images/frupal1.png">
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="project-body">
-                                        <h3 class="project-body-title">Frupal</h3>
-                                        <p class="project-body-content">A cool adventure game!</p>
-                                        <div class="project-body-footer">
-                                            <a href="https://github.com/keatonkraiger/Frupal" target="_blank"><button class="btn btn-primary" type="button">Details >></button></a>
-                                            <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
-                                            <button class="btn btn-danger" type="button">Demo >></button>
-                                            </a>
-                                        </div>
-                                    </div>
+                    <div>
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/project.png">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="project-block">
+                                <div class="project-img">
+                                    <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
+                                        <img class="myimg img-responsive zoom-effect" src="images/frupal1.png">
+                                    </a>
                                     
                                 </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="project-block">
-                                    <div class="project-img">
-                                        <a href="#" target="_blank">
-                                            <img class="myimg img-responsive zoom-effect" src="images/sift.png">
+                                <div class="project-body">
+                                    <h3 class="project-body-title">Frupal</h3>
+                                    <p class="project-body-content">A cool adventure game!</p>
+                                    <div class="project-body-footer">
+                                        <a href="https://github.com/keatonkraiger/Frupal" target="_blank"><button class="btn btn-primary" type="button">Details >></button></a>
+                                        <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
+                                        <button class="btn btn-danger" type="button">Demo >></button>
                                         </a>
-                                
                                     </div>
-                                    <div class="project-body">
-                                        <h3 class="project-body-title">SIFT</h3>
-                                        <p class="project-body-content">Scale-Invariant Feature Transform</p>
-                                        <div class="project-body-footer">
-                                            <a href="#" target="_blank"><button class="btn btn-primary"
-                                                    type="button">Details >></button></a>
-                                            <a href="#" target="_blank">
-                                                <button class="btn btn-danger" type="button">Demo >></button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                three
+                        </div>
+                        <!-- end first project -->
+                        <div class="col-sm-4">
+                            <div class="project-block">
+                                <div class="project-img">
+                                    <a href="#" target="_blank">
+                                        <img class="myimg img-responsive zoom-effect" src="images/sift.png">
+                                    </a>
+                            
+                                </div>
+                                <div class="project-body">
+                                    <h3 class="project-body-title">SIFT</h3>
+                                    <p class="project-body-content">Scale-Invariant Feature Transform</p>
+                                    <div class="project-body-footer">
+                                        <a href="#" target="_blank"><button class="btn btn-primary"
+                                                type="button">Details >></button></a>
+                                        <a data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover">
+                                            <button class="btn btn-danger" type="button">Demo >></button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- end second project -->
+                        <div class="col-sm-4">
+                            <div class="project-block">
+                                <div class="project-img">
+                                    <a href="#" target="_blank">
+                                        <img class="myimg img-responsive zoom-effect" src="images/sift.png">
+                                    </a>
+                            
+                                </div>
+                                <div class="project-body">
+                                    <h3 class="project-body-title">SIFT</h3>
+                                    <p class="project-body-content">Scale-Invariant Feature Transform</p>
+                                    <div class="project-body-footer">
+                                        <a href="#" target="_blank"><button class="btn btn-primary" type="button">Details >></button></a>
+                                        <a href="#" target="_blank">
+                                            <button class="btn btn-danger" type="button">Demo >></button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end third project -->
+                    </div>
 
                     
                 </div>
@@ -321,6 +378,6 @@
 </div>
 
 
-<script src="JS/homePage.js"></script>
+
 </body>
 </html>

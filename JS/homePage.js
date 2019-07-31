@@ -10,7 +10,11 @@ $("#searchBtn").on("click", function () {
     });
 });
 
-$('body').scrollspy({ target: "#to-contect", offset: 50 });
+$(document).ready(function () {
+    $('body').scrollspy({ target: "#to-contect", offset: 50 });
+    $('[data-toggle="popover"').popover();
+});
+
 
 // $('#dropdown').on("mouseenter", function () {
 //     $('.dropdown-menu').slideToggle(200);
