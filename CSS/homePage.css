@@ -12,7 +12,7 @@
     /* background-image: url('../images/s1.jpeg'); */
     /* background-color: #384750; */
     height: auto;
-    /* margin-top:50px; */
+    /* margin-top:50px; for fixed top */ 
 
 }
 
@@ -32,17 +32,29 @@
     border: 0px;
 }
 
-.navbar-brand { 
-    font-size: 30px;
+/* setting brand text style */
+.brand-text{
+    font-size: 28px;
     font-weight: 530;
     cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
-.navbar-default .navbar-brand {
+/* setting brand text color */
+.navbar .navbar-brand {
     color: #f9fdfe;
 }
+
+.brand-img-block { 
+    margin-right: 10px;
+}
+
+.brand-img {
+    width: 25px;
+    height: 25px;
+}
+
+
 
 
 
@@ -225,6 +237,39 @@
 /****************************** tab content **************************/
 .tab-content {
     margin-right: 35px;
+}
+
+
+
+/*------------------------------- Project ------------------------------*/
+.project-block {
+    border: 1px solid #dfdfdf;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    margin-bottom: 20px;
+}
+
+.project-img {
+    border-style: none;
+}
+
+.project-body {
+    padding: 1.25rem;
+    background-color: #f7f7f7;
+}
+
+.project-body-title {
+    margin: 10px;
+    text-align: center;
+}
+
+.project-body-content {
+    margin-bottom: 12px;
+}
+
+.project-body-footer {
+    margin-bottom: 15px;
+    word-spacing: 18px;
 }
 
 

@@ -8,8 +8,8 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/weather/0.0.2/weather.min.js"></script>
 
@@ -18,12 +18,6 @@
     
     <link rel="stylesheet" type="text/css" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
 
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
@@ -42,10 +36,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">
-                <span>
-                <img  src="images/X2.png" style="width:20px"></span> Xiang
-                </a>
+            <a class="navbar-brand brand-img-block" href="index.html">
+                <img class="brand-img" src="images/X2.png">
+            </a>
+            <a class="navbar-brand brand-text" href="index.html">
+                xiang
+            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -60,7 +56,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="tab-link" data-toggle="pill" href="#section3">Gallary</a></li>
                         <li><a class="tab-link" data-toggle="pill" href="#">Music</a></li>
-                        <li><a class="tab-link" data-toggle="pill" href="#">Page 1-3</a></li>
+                        <li><a class="tab-link" data-toggle="pill" href="#myProject">Project</a></li>
                     </ul>
                 </li>
 
@@ -237,7 +233,57 @@
                 </div>
 
                 <div id="myProject" class="tab-pane fade">
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="project-block">
+                                    <div class="project-img">
+                                        <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
+                                            <img class="myimg img-responsive zoom-effect" src="images/frupal1.png">
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-body-title">Frupal</h3>
+                                        <p class="project-body-content">A cool adventure game!</p>
+                                        <div class="project-body-footer">
+                                            <a href="https://github.com/keatonkraiger/Frupal" target="_blank"><button class="btn btn-primary" type="button">Details >></button></a>
+                                            <a href="http://web.cecs.pdx.edu/~huanxsu/Frupal/" target="_blank">
+                                            <button class="btn btn-danger" type="button">Demo >></button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="project-block">
+                                    <div class="project-img">
+                                        <a href="#" target="_blank">
+                                            <img class="myimg img-responsive zoom-effect" src="images/sift.png">
+                                        </a>
+                                
+                                    </div>
+                                    <div class="project-body">
+                                        <h3 class="project-body-title">SIFT</h3>
+                                        <p class="project-body-content">Scale-Invariant Feature Transform</p>
+                                        <div class="project-body-footer">
+                                            <a href="#" target="_blank"><button class="btn btn-primary"
+                                                    type="button">Details >></button></a>
+                                            <a href="#" target="_blank">
+                                                <button class="btn btn-danger" type="button">Demo >></button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                three
+                            </div>
+                        </div>
 
+                    
                 </div>
             </div>
             <!-- end tab content -->
