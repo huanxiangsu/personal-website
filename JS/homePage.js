@@ -1,3 +1,4 @@
+var img1 = 
 
 
 $(document).ready(function () {
@@ -18,18 +19,14 @@ $(document).ready(function () {
 
     $('[data-toggle="popover"').popover();
 
-    // add close botton to gallary image
-    $('.gallary-img').append('<button class="close-btn" type="button" title="Close">x</button>');
-
-    $('.close-btn').on('click', function () {
-        $(this).parent().remove();
-    });
+    setupGallary();
+    changeGallaryView();
+    displayImgModal();
+    
 });
 
 
-function gallary() {
 
-}
 
 
 

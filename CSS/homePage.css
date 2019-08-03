@@ -207,7 +207,7 @@
 }
 
 .zoom-rotate-effect {
-    transition: all 0.3s;
+    transition: transform 0.3s;
 }
 
 .zoom-rotate-effect:hover {
@@ -228,10 +228,13 @@
     padding: 0 10px;
 }
 
+
+
 .gallary-col {
     flex: 33.3%;
     max-width: 33.3%;
     padding: 0 5px;
+    transition: all 0.7s;
 }
 
 .gallary-img {
@@ -245,8 +248,6 @@
     vertical-align: middle;
     transition: all 0.3s;
     overflow: hidden;
-    /* flex: 25%;
-    max-width: 25%; */
 }
 
 .gallary-img:hover {
@@ -258,10 +259,6 @@
         flex: 50%;
         max-width: 50%;
     }
-    /* .gallary-img {
-        flex: 50%;
-        max-width: 50%;
-    } */
     .zoom-rotate-effect:hover {
         transform: scale(1.07) rotate(2deg);
     }
@@ -271,10 +268,6 @@
         flex: 100%;
         max-width: 100%;
     }
-    /* .gallary-img {
-        flex: 100%;
-        max-width: 100%;
-    } */
     .zoom-rotate-effect:hover {
         transform: scale(1.04) rotate(1deg);
     }
@@ -321,6 +314,46 @@
 
 .gallary-icon:hover {
     transform: scale(1.2);
+}
+
+.modal-dialog {
+    width: 70%;
+    height: 70%;
+    margin: 30px auto;
+}
+
+.modal-img {
+    margin: auto;
+}
+
+.modal-close {
+    margin: auto;
+    height: 50px;
+    width: 50px;
+}
+
+.modal-close-btn {
+    font-size: 70px;
+    /* font-weight: bold; */
+    color: #FFF;
+    opacity: 0.7;
+}
+
+#modal-img-caption {
+    margin: 15px auto;
+    text-align: center;
+    color: #FFF;
+    padding: 15px 0px;
+}
+
+.modal-img, #modal-img-caption, .modal-close-btn {
+    animation-name: zoom-in-effect;
+    animation-duration: 0.8s;
+}
+
+@keyframes zoom-in-effect {
+    from {transform:scale(0)}
+    to {transform: scale(1)}
 }
 
 /*----------------------------- Login --------------------------------------*/
