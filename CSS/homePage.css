@@ -2,11 +2,13 @@
 .bg {
     background-image: url('../images/s13.jpg');
     background-size: 100% 100%;
+    opacity: 0.9;
 }
 
 .bg2 {
-    background-image: url('../images/blue-background.jpg');
+    background-image: url('../images/bg5.jpg');
     background-size: 100% 100%;
+
 }
 
 .bg1 {
@@ -117,22 +119,9 @@
     background-color: #e7e7e7;
 }
 
-
-
-
-
-
-
-.side{
-    height: 100%;
-}
-
-
 @media screen and (max-width:767px){
     .row.content {height: auto;}
 }
-
-
 
 .social-media-list {
     margin-top: 12px;
@@ -203,6 +192,11 @@
     height: auto;
 }
 
+.carousel-control.left, .carousel-control.right{
+    background-image: none;
+    color: antiquewhite;
+}
+
 .zoom-effect {
     transition: transform 0.3s;
 }
@@ -235,14 +229,14 @@
 }
 
 .gallary-col {
-    flex: 25%;
-    max-width: 25%;
+    flex: 33.3%;
+    max-width: 33.3%;
     padding: 0 5px;
 }
 
 .gallary-img {
-    padding: 15px;
-    margin: 0 5px 5px 0;
+    padding: 13px;
+    margin: 0 5px 10px 0;
     border-radius: 10px;
     border: 2px solid transparent;
     position: relative;
@@ -251,6 +245,8 @@
     vertical-align: middle;
     transition: all 0.3s;
     overflow: hidden;
+    /* flex: 25%;
+    max-width: 25%; */
 }
 
 .gallary-img:hover {
@@ -262,6 +258,10 @@
         flex: 50%;
         max-width: 50%;
     }
+    /* .gallary-img {
+        flex: 50%;
+        max-width: 50%;
+    } */
     .zoom-rotate-effect:hover {
         transform: scale(1.07) rotate(2deg);
     }
@@ -271,11 +271,57 @@
         flex: 100%;
         max-width: 100%;
     }
+    /* .gallary-img {
+        flex: 100%;
+        max-width: 100%;
+    } */
     .zoom-rotate-effect:hover {
         transform: scale(1.04) rotate(1deg);
     }
 }
 
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 6px;
+    border-radius: 0 5px 0 15px;
+    background: rgba(207,207,207,0.8);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.gallary-img:hover .close-btn {
+    visibility: visible;
+    opacity: 1;
+}
+
+.gallary-icon-list {
+    text-align: right;
+    margin-bottom: 17px;
+    margin-right: 25px;
+}
+
+.gallary-icon {
+    padding: 3px;
+    margin-left: 12px;
+    font-size: 22px;
+    color: #2c3235;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.gallary-icon:hover {
+    transform: scale(1.2);
+}
 
 /*----------------------------- Login --------------------------------------*/
 .modal-title{
