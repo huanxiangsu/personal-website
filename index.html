@@ -41,7 +41,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand brand-img-block" href="index.html">
-                <img class="brand-img" src="images/X2.png">
+                <img class="brand-img" src="images/x10.png">
             </a>
             <a class="navbar-brand brand-text" href="index.html">
                 xiang
@@ -60,7 +60,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="tab-link" id="gallary-tab" data-toggle="pill" href="#myGallary">Gallary</a></li>
                         <li><a class="tab-link" data-toggle="pill" href="#xx">Music</a></li>
-                        <li id="project-tab"><a class="tab-link" data-toggle="pill" href="#myProject">Project</a></li>
+                        <li id="project-tab"><a class="tab-link" data-toggle="pill" href="#myProject" :last-child>Project</a></li>
                     </ul>
                 </li>
 
@@ -220,12 +220,13 @@
             
                 <div id="Resume" class="tab-pane fade">
                     <h1>My Resume</h1>
-                    <iframe src="https://calendar.google.com/calendar/embed?src=xiang625764563%40gmail.com&ctz=America%2FLos_Angeles"
-                        style="border: 0" width="100%" frameborder="0" scrolling="no"></iframe>
+                    
                 </div>
+
+<!--------------------------------------------- calender site -------------------------------------->
             
-                <div id="section3" class="tab-pane fade">
-                    <h1>My aa</h1>
+                <div id="myCalender" class="tab-pane fade">
+                    <h1 class="text-center">My Calender</h1>
                 </div>
 
 <!--------------------------------------------- photos gallary site -------------------------------------->
@@ -333,10 +334,10 @@
                 <div class="about-me-block">
                     <div class="about-me-header">
                         <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                        <a class="about-me-header-title" id="side-about-id" data-toggle="pill" href="#AboutMe">About Me >></a>
+                        <a class="about-me-header-title" id="side-about-id" href="#AboutMe">About Me >></a>
                     </div>
                     <div class="about-me-img">
-                        <img class="myimg img-responsive img-rounded zoom-effect" src="images/x3.png">
+                        <img class="myimg img-responsive img-rounded zoom-effect" src="images/x11.jpg">
                     </div>
                     <div class="about-me-content">
                         Name: Huanxiang Su <br>
@@ -349,7 +350,7 @@
                 <div class="about-me-block">
                     <div class="about-me-header">
                         <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                        <a class="about-me-header-title" id="side-project-id" data-toggle="pill" href="#myProject" style="font-size:20px">Recent Projects >></a>
+                        <a class="about-me-header-title" id="side-project-id" href="#myProject" style="font-size:20px">Recent Projects >></a>
                     </div>
                     <div class="about-me-content side-project-content">
                     </div>
@@ -376,14 +377,14 @@
                 <div class="about-me-block">
                     <div class="about-me-header">
                         <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                        <a class="about-me-header-title" style="font-size:20px">Calender >></a>
+                        <a class="about-me-header-title" id="side-calender-id" style="font-size:20px" href="#myCalender">Calender >></a>
                     </div>
-                    <div class="">
-                        <iframe
+                    <div class="about-me-content">
+                        <iframe id="frame-calender"
                             src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23039BE5&amp;ctz=America%2FLos_Angeles&amp;src=eGlhbmc2MjU3NjQ1NjNAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%237986CB&amp;color=%2333B679&amp;color=%230B8043&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showCalendars=0&amp;showPrint=0&amp;showTz=1&amp;showTabs=0&amp;mode=MONTH"
-                            style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="yes">
+                            style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no">
                         </iframe>
-                        <p class="text-center" id="moment-time"></p>
+                        <p class="text-center" id="moment-time" style="margin-top:4px"></p>
                     </div>
                 </div>
                 

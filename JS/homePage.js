@@ -1,6 +1,7 @@
+var calender_site = false;
 
 $(document).ready(function () {
-    $('body').scrollspy({ target: "#to-contect", offset: 50 });
+    // $('body').scrollspy({ target: "#to-contect, #side-calender-id", offset: 50 });
 
     $("#to-contact").on('click', function (event) {
         if (this.hash !== "") {
@@ -9,32 +10,28 @@ $(document).ready(function () {
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 500, function () {
+            }, 600, function () {
                 window.location.hash = hash;
             });
-       } 
+        }
     });
 
     $('[data-toggle="popover"').popover();
 
-    $('#side-about-id').on('click', function () {
-        $('#myNav>li, .dropdown-menu>li').removeClass('active');
-        $('#about-tab').addClass('active');  
-    });
+    
 
-    $('#side-project-id').on('click', function () {
-        $('#myNav>li, .dropdown-menu>li').removeClass('active');
-        $('.dropdown, #project-tab').addClass('active');
-    });
 
     window.setInterval(updateCurrentTime, 1000);
+
+    displayAboutMe();
+    getProjects();
+    displayProjects();
+
+    displayCalender();
 
     setupGallary();
     changeGallaryView();
     displayImgModal();
-
-    getProjects();
-    
 });
 
 
@@ -48,7 +45,6 @@ function getProjects() {
     var len = projectList.length - 1;
 
     // add at most three projects to the side project content.
-
     for (var i = 0; i < 3; ++i) {
         if (len < 0) {
             return;
@@ -73,8 +69,84 @@ function getProjects() {
     }
 }
 
+
+function displayProjects() {
+    $('#side-project-id').on('click', function (event) {
+        $('#myNav>li, .dropdown-menu>li').removeClass('active');
+        $('.dropdown, #project-tab').addClass('active');
+        
+        $(this).tab('show');
+        
+    });
+
+    $('#side-project-id').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 300, function () {
+                // window.location.hash = hash;
+            });
+        }
+    });
+}
+
+
+function displayAboutMe() {
+    $('#side-about-id').on('click', function (event) {
+        $('#myNav>li, .dropdown-menu>li').removeClass('active');
+        $('#about-tab').addClass('active');
+        $(this).tab('show');
+    });
+
+    $('#side-about-id').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 100, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+}
+
+
 function updateCurrentTime() {
     $('#moment-time').text(moment().format('MMMM DD YYYY, hh:mm:ss A'));
+}
+
+
+function displayCalender() {
+    $('#side-calender-id').on('click', function (event) {
+        $('#myNav>li, .dropdown-menu>li').removeClass('active');
+        if (!calender_site) {
+            var cal = '<iframe id="site-calender" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23039BE5&amp;ctz=America%2FLos_Angeles&amp;src=eGlhbmc2MjU3NjQ1NjNAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%237986CB&amp;color=%2333B679&amp;color=%230B8043&amp;showTitle=0&amp;showTabs=1&amp;showCalendars=1" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="yes"></iframe>';
+            $('#myCalender').append(cal);
+            calender_site = true;
+        }
+
+        $(this).tab('show');
+        
+
+    });
+
+    $('#side-calender-id').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 300, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
 }
 
 
