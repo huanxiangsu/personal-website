@@ -27,6 +27,8 @@ $(document).ready(function () {
         $('.dropdown, #project-tab').addClass('active');
     });
 
+    window.setInterval(updateCurrentTime, 1000);
+
     setupGallary();
     changeGallaryView();
     displayImgModal();
@@ -34,6 +36,7 @@ $(document).ready(function () {
     getProjects();
     
 });
+
 
 function getProjects() {
     var projectList = $('.project-body');
@@ -68,6 +71,10 @@ function getProjects() {
         $('.side-project-content').append(a);
         --len;
     }
+}
+
+function updateCurrentTime() {
+    $('#moment-time').text(moment().format('MMMM DD YYYY, hh:mm:ss A'));
 }
 
 
