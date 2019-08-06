@@ -3,6 +3,11 @@ var calender_site = false;
 $(document).ready(function () {
     // $('body').scrollspy({ target: "#to-contect, #side-calender-id", offset: 50 });
 
+    window.onscroll = function () {
+        scroll();
+    };
+    scrollToTop();
+
     $("#to-contact").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -86,8 +91,8 @@ function displayProjects() {
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 300, function () {
-                // window.location.hash = hash;
+            }, 200, function () {
+                window.location.hash = hash;
             });
         }
     });
@@ -108,7 +113,7 @@ function displayAboutMe() {
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
-            }, 100, function () {
+            }, 'fast', function () {
                 window.location.hash = hash;
             });
         }
@@ -146,6 +151,27 @@ function displayCalender() {
                 window.location.hash = hash;
             });
         }
+    });
+}
+
+
+function scroll() {
+    if ($(document).scrollTop() > 100) {
+        $('#scroll-top').css({
+            'display': 'inline-block',
+        });
+    } else {
+        $('#scroll-top').css({
+            'display': 'none',
+        });
+    }
+}
+
+function scrollToTop() {
+    $(".scroll-top-btn").click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
     });
 }
 

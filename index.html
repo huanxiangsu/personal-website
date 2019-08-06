@@ -31,7 +31,6 @@
 <body>
 <div class="container-fluid bg">
 
-
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -406,11 +405,14 @@
         <h2 class="text-center">Contact</h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>Contact Me:</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span>Portland, US</p>
-                <p><span class="glyphicon glyphicon-phone"></span>+1 503-123-1234</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>huanxsu@pdx.edu</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>xiang625764563@gmail.com</p>
+                <p style="font-size:20px">Contact Me:</p>
+                <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce; margin-left: 33px"></span>Portland, US</p>
+                <p><span class="glyphicon glyphicon-phone contact-icon"></span>+1 503-515-1075</p>
+                <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span>huanxsu@pdx.edu</p>
+                <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span>xiang625764563@gmail.com</p>
+                <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>
+
+                
             </div>
 
             <div class="col-sm-7">
@@ -432,14 +434,12 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <p class="text-center">copyright</p>
     </div>
 </div>
 
-<div id="gallary-img-modal" class="modal" role="dialog">
-    <!-- <div class="modal-close">
-        <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-    </div> -->
-    
+<div id="gallary-img-modal" class="modal" role="dialog">    
     <div class="modal-dialog">
         <div class="modal-close">
             <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
@@ -447,6 +447,12 @@
         <img class="img-responsive img-rounded modal-img" id="modal-img" src="#">
         <div id="modal-img-caption">aaaaaaaa</div>
     </div>
+</div>
+
+<div class="scroll-top-block" id="scroll-top">
+    <button class="btn scroll-top-btn" title="Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </div>
 
 </body>
