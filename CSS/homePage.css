@@ -1,6 +1,6 @@
 /******************************* Background ****************************/
 .bg {
-    background-image: url('../images/s13.jpg');
+    background-image: url('../images/s5.jpeg');
     background-size: 100% 100%;
     opacity: 0.92;
     padding: 0;
@@ -274,7 +274,11 @@
 .gallary {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 10px;
+    /* padding: 7px 3px; */
+    border: 30px solid transparent;
+    border-image-source: url("../images/border11.png");
+    border-image-slice: 53;
+    border-image-repeat: round;
 }
 
 
@@ -282,7 +286,7 @@
 .gallary-col {
     flex: 33.3%;
     max-width: 33.3%;
-    padding: 0 5px;
+    padding: 0 4px;
     transition: all 0.7s;
 }
 
@@ -439,11 +443,20 @@
 .project-img {
     border-style: none;
     border-radius: 10px;
+    
+}
+
+.project-img>a>img {
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .project-body {
     padding: 1.25rem;
     border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     background-color: rgba(238, 238, 238,.8);
 }
 
@@ -582,5 +595,10 @@
 .scroll-top-btn:hover {
     background-color: rgb(238, 238, 238);
     color: rgb(12, 2, 2);
+}
+
+.transparent-primary-btn:hover {
+    background-color: transparent;
+    color: #337ab7;
 }
 
