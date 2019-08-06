@@ -157,13 +157,9 @@ function displayCalender() {
 
 function scroll() {
     if ($(document).scrollTop() > 100) {
-        $('#scroll-top').css({
-            'display': 'inline-block',
-        });
+        $('#scroll-top').fadeIn(1300);
     } else {
-        $('#scroll-top').css({
-            'display': 'none',
-        });
+        $('#scroll-top').fadeOut(1300); 
     }
 }
 
