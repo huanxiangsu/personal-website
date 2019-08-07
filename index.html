@@ -20,11 +20,14 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+    
+    <!-- my source code -->
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
-    <script src="JS/homePage.js"></script>
-    <script src="JS/gallary.js"></script>
+    <script type="text/javascript" src="JS/homePage.js"></script>
+    <script type="text/javascript" src="JS/gallary.js"></script>
+    
     
     </head>
 
@@ -58,7 +61,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="tab-link" id="gallary-tab" data-toggle="pill" href="#myGallary">Gallary</a></li>
-                        <li><a class="tab-link" data-toggle="pill" href="#xx">Music</a></li>
+                        <li><a class="tab-link" data-toggle="pill" href="#myMusic">Music</a></li>
                         <li id="project-tab"><a class="tab-link" data-toggle="pill" href="#myProject" :last-child>Project</a></li>
                     </ul>
                 </li>
@@ -219,6 +222,60 @@
             
                 <div id="Resume" class="tab-pane fade">
                     <h1>My Resume</h1>
+                
+                </div>
+
+<!--------------------------------------------- music site -------------------------------------->
+
+                <div id="myMusic" class="tab-pane fade">
+                    <h1 class="text-center">My Spotify Music</h1>
+                    
+                        <div class="music-player">
+                            <div class="music-name">
+                                <div class="music-name-title">
+                                    Title
+                                </div>
+                                <div class="music-name-artist">
+                                    Artist
+                                </div>
+                            </div>
+                            
+                            <div class="img-circle music-img spin-effect">
+                                
+                            </div>
+                            
+                            <div class="progress music-progress">
+                                <div class="progress-bar progress-bar-striped active" id = "progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="progress-text">
+                                <span class="current-minute">
+                                    0:00
+                                </span>
+                                <span class="total-minute">
+                                    4:20
+                                </span>
+                            </div>
+                            <div class="music-control-bars">
+                                <div class="control-inner">
+                                    <div class="btn btn-music" id="prev-btn"><i class="fas fa-step-backward"></i></div>
+                                    <div class="btn btn-music" id="play-btn"><i class="fas fa-play"></i></div>
+                                    <div class="btn btn-music" id="pause-btn"><i class="fas fa-pause"></i></div>
+                                    <div class="btn btn-music" id="next-btn"><i class="fas fa-step-forward"></i></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="playlist-block">
+                                list
+                            </div>
+                        </div>
+
+                    <audio src="./music/Taylor_Swift_-_Wildest_Dreams.mp3" controls>
+                        <embed src="./music/Taylor_Swift_-_Wildest_Dreams.mp3" width="300" height="90" loop="false" autostart="false">
+                    </audio>
+                        
                     
                 </div>
 
@@ -281,7 +338,7 @@
                                         <img class="myimg img-responsive zoom-effect" src="images/sift.png">
                                     </a>
                                 </div>
-                                
+
                                 <div class="project-body">
                                     <h3 class="project-body-title">SIFT</h3>
                                     <p class="project-body-content">Scale-Invariant Feature Transform Algorithm for image feature detection</p>
