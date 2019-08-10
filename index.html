@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
     <script type="text/javascript" src="JS/homePage.js"></script>
     <script type="text/javascript" src="JS/gallary.js"></script>
+    <script type="text/javascript" src="JS/musicPlayer.js"></script>
     
     
     </head>
@@ -228,7 +229,7 @@
 <!--------------------------------------------- music site -------------------------------------->
 
                 <div id="myMusic" class="tab-pane fade">
-                    <h1 class="text-center">My Spotify Music</h1>
+                    <h1 class="text-center">My Music</h1>
                     
                         <div class="music-player">
                             <div class="music-name">
@@ -239,22 +240,24 @@
                                     Artist
                                 </div>
                             </div>
-                            
+                                
                             <div class="img-circle music-img spin-effect">
-                                
-                            </div>
-                            
-                            <div class="progress music-progress">
-                                <div class="progress-bar progress-bar-striped active" id = "progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                                    
+                                <div class="music-center-circle">
+
                                 </div>
-                                
                             </div>
+
+                            <div class="progress-music">
+                                <div id="bar-moving" class="bar"></div>
+                                <div id="bar-empty" class="bar"></div>
+                                <div id="slider-btn"></div>
+                            </div>
+
                             <div class="progress-text">
-                                <span class="current-minute">
+                                <span id="current-minute">
                                     0:00
                                 </span>
-                                <span class="total-minute">
+                                <span id="total-minute">
                                     4:20
                                 </span>
                             </div>
@@ -266,7 +269,10 @@
                                     <div class="btn btn-music" id="next-btn"><i class="fas fa-step-forward"></i></div>
                                     
                                 </div>
+                                <div class="btn btn-music" id="list-btn"><i class="fas fa-list-ul"></i></div>
+                                <div class="btn btn-music" id="random-btn"><i class="fas fa-random"></i></div>
                             </div>
+
                             <div class="playlist-block">
                                 list
                             </div>
