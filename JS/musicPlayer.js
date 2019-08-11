@@ -14,23 +14,8 @@ $(document).ready(function () {
 function setupMusicPlayer() {
     openPlayList();
     musicPlayerFunctions();
+    changeBg();
 }
-
-
-function openPlayList() {
-    $('#list-btn').on('click', function () {
-        $('.playlist-block').slideToggle(500);
-    });
-}
-
-
-function updateProgressBar(percent) {
-    var bar_width = bar_max * percent;
-    $('#bar-moving').css('width', bar_width + 'px');
-    var slider_width = bar_width + initial_btn_width;
-    $('#slider-btn').css('left', slider_width + 'px');
-}
-
 
 
 function MusicPlayer(playlist) {
@@ -374,17 +359,20 @@ function musicPlayerFunctions() {
     $('#next-btn').on('click', function () {
         pauseMusicBtn();
         myPlayer.skip('next');
+        refreshMusicImg();
         playMusicBtn();
     });
 
     $('#prev-btn').on('click', function () {
         pauseMusicBtn();
         myPlayer.skip('prev');
+        refreshMusicImg();
         playMusicBtn();
     });
 
     $('.playlist-song').on('click', function () {
         var index = $(this).find('.playlist-song-number').eq(0).text();
+        refreshMusicImg();
         myPlayer.skipTo(index - 1);
     });
 
@@ -464,6 +452,19 @@ function formatDuration(duration) {
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 }
 
+function openPlayList() {
+    $('#list-btn').on('click', function () {
+        $('.playlist-block').slideToggle(500);
+    });
+}
+
+function updateProgressBar(percent) {
+    var bar_width = bar_max * percent;
+    $('#bar-moving').css('width', bar_width + 'px');
+    var slider_width = bar_width + initial_btn_width;
+    $('#slider-btn').css('left', slider_width + 'px');
+}
+
 function playMusicBtn() {
     $('#play-btn').hide();
     $('#pause-btn').css({
@@ -483,6 +484,49 @@ function pauseMusicBtn() {
         'animation-play-state': 'paused'
     });
 }
+
+function refreshMusicImg() {
+    $('.music-img').removeClass('spin-effect');
+    window.setTimeout(function () {
+        $('.music-img').addClass('spin-effect');
+    }, 10);
+    
+}
+
+var bgIndex = 0;
+function changeBg() {
+    if (bgIndex == 0) {
+        $('.music-player').css('background-color', 'rgba(73, 74, 78, 0.4)');
+        $('#bar-moving').css('background-color', 'rgba(241, 235, 237, 0.9)');
+        $('.btn-music').css('background-color', 'rgba(73, 74, 78, 0.5)');
+
+    } else if (bgIndex == 1) {
+        $('.music-player').css('background-color', 'rgba(45, 66, 216, 0.4)');
+        $('#bar-moving').css('background-color', 'rgba(4, 33, 243, 0.9)');
+        $('.btn-music').css('background-color', 'rgba(45, 66, 216, 0.4)');
+
+    } else if (bgIndex == 2) {
+        $('.music-player').css('background-color', 'rgba(230, 22, 65, 0.4)');
+        $('#bar-moving').css('background-color', 'rgba(245, 10, 10, 0.9)');
+        $('.btn-music').css('background-color', 'rgba(230, 22, 65, 0.4)');
+
+    } else if (bgIndex == 3) {
+        $('.music-player').css('background-color', 'rgba(63, 150, 146, 0.4)');
+        $('#bar-moving').css('background-color', 'rgba(41, 222, 214, 0.9)');
+        $('.btn-music').css('background-color', 'rgba(63, 150, 146, 0.4)');
+    } else {
+        $('.music-player').css('background-color', 'rgba(191, 34, 202, 0.4)');
+        $('#bar-moving').css('background-color', 'rgba(222, 12, 236, 0.9)');
+        $('.btn-music').css('background-color', 'rgba(191, 34, 202, 0.4)');
+    }
+
+    ++bgIndex;
+    if (bgIndex == 5) {
+        bgIndex = 0;
+    }
+}
+
+window.setInterval(changeBg, 5000);
 
 
 
