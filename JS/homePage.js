@@ -38,22 +38,9 @@ $(document).ready(function () {
     changeGallaryView();
     displayImgModal();
     
-    aa();
-    
 });
 
-function aa() {
-    var sound = new Howl({
-        src: ['./music/Taylor_Swift_-_Wildest_Dreams.mp3'],
-        autoplay: true,
-        loop: true,
-        volume: 0.5,
-        onend: function () {
-            console.log('finished play wildest dream!');
-        }
-    });
-    sound.play();
-}
+
 
 function getProjects() {
     var projectList = $('.project-body');
