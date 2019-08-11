@@ -52,7 +52,7 @@
                 <ul class="nav navbar-nav navbar-right" id="myNav">
                     <li class="active"><a class="tab-link" data-toggle="pill" href="#home">Home</a></li>
                     <li id="about-tab"><a class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
-                    <li><a class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
+                    <li><a id="resume-tab" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle tab-link" id="dropdown" href="#">Interest
                             <span class="caret"></span>
@@ -209,7 +209,9 @@
 
                 <!-- section 1 content -->
                 <div id="AboutMe" class="tab-pane fade">
-                    <h1>My Introduction</h1>
+                    <div>
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_introduction.png">
+                    </div>
                     <p>...........</p>
                     
             
@@ -218,77 +220,82 @@
 <!--------------------------------------------- resume site -------------------------------------->
             
                 <div id="Resume" class="tab-pane fade">
-                    <h1>My Resume</h1>
+                    <div>
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_resume.png">
+                    </div>
 
-                    
+                    <div id="resume-block"></div>
                 
                 </div>
 
 <!--------------------------------------------- music site -------------------------------------->
 
                 <div id="myMusic" class="tab-pane fade">
-                    <h1 class="text-center">My Music</h1>
+                    <div>
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_musics.png">
+                    </div>
                     
-                        <div class="music-player">
-                            <div class="music-name">
-                                <div class="music-name-title">
-                                    Title
-                                </div>
-                                <div class="music-name-artist">
-                                    Artist
-                                </div>
+                    <div class="music-player">
+                        <div class="music-name">
+                            <div class="music-name-title">
+                                Title
                             </div>
-                                
-                            <div class="img-circle music-img spin-effect">
-                                <div class="music-center-circle">
-                                </div>
-                            </div>
-
-                            <div class="progress-music">
-                                <div id="bar-moving" class="bar "></div>
-                                <div id="bar-empty" class="bar"></div>
-                                <div class="" id="slider-btn"></div>
-                            </div>
-
-                            <div class="progress-text">
-                                <span id="current-minute">
-                                    0:00
-                                </span>
-                                <span id="total-minute">
-                                    0:00
-                                </span>
-                            </div>
-                            <div class="music-control-bars">
-                                <div class="control-inner">
-                                    <div class="btn btn-music" id="prev-btn"><i class="fas fa-step-backward"></i></div>
-                                    <div class="btn btn-music" id="play-btn"><i class="fas fa-play"></i></div>
-                                    <div class="btn btn-music" id="pause-btn"><i class="fas fa-pause"></i></div>
-                                    <div class="btn btn-music" id="next-btn"><i class="fas fa-step-forward"></i></div>
-                                    
-                                </div>
-                                <div class="btn btn-music" id="list-btn"><i class="fas fa-list-ul"></i></div>
-                                <div class="btn btn-music" id="sequence-btn"><i class="fas fa-sync"></i></div>
-                                <div class="btn btn-music" id="random-btn"><i class="fas fa-random"></i></div>
-                                <div class="btn btn-music" id="redo-btn"><i class="fas fa-redo"></i></div>
-                            </div>
-
-                            <div class="playlist-block">
-                                <div class="playlist-header">
-                                    <div class="playlist-header-text">
-                                        <span><i class="fas fa-music" style="font-size: 25px;"></i></span>
-                                        &nbsp;&nbsp;My Playlist (<span id="songs-Length">0</span>)
-                                    </div>
-                                </div>
-                                
+                            <div class="music-name-artist">
+                                Artist
                             </div>
                         </div>
-                    
+                            
+                        <div class="img-circle music-img spin-effect">
+                            <div class="music-center-circle">
+                            </div>
+                        </div>
+
+                        <div class="progress-music">
+                            <div id="bar-moving" class="bar "></div>
+                            <div id="bar-empty" class="bar"></div>
+                            <div class="" id="slider-btn"></div>
+                        </div>
+
+                        <div class="progress-text">
+                            <span id="current-minute">
+                                0:00
+                            </span>
+                            <span id="total-minute">
+                                0:00
+                            </span>
+                        </div>
+                        <div class="music-control-bars">
+                            <div class="control-inner">
+                                <div class="btn btn-music" id="prev-btn"><i class="fas fa-step-backward"></i></div>
+                                <div class="btn btn-music" id="play-btn"><i class="fas fa-play"></i></div>
+                                <div class="btn btn-music" id="pause-btn"><i class="fas fa-pause"></i></div>
+                                <div class="btn btn-music" id="next-btn"><i class="fas fa-step-forward"></i></div>
+                                
+                            </div>
+                            <div class="btn btn-music" id="list-btn"><i class="fas fa-list-ul"></i></div>
+                            <div class="btn btn-music" id="sequence-btn"><i class="fas fa-sync"></i></div>
+                            <div class="btn btn-music" id="random-btn"><i class="fas fa-random"></i></div>
+                            <div class="btn btn-music" id="redo-btn"><i class="fas fa-redo"></i></div>
+                        </div>
+
+                        <div class="playlist-block">
+                            <div class="playlist-header">
+                                <div class="playlist-header-text">
+                                    <span><i class="fas fa-music" style="font-size: 25px;"></i></span>
+                                    &nbsp;&nbsp;My Playlist (<span id="songs-Length">0</span>)
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
 
 <!--------------------------------------------- calender site -------------------------------------->
             
                 <div id="myCalender" class="tab-pane fade">
-                    <h1 class="text-center">My Calender</h1>
+                    <div>
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_calender.png">
+                    </div>
                 </div>
 
 <!--------------------------------------------- photos gallary site -------------------------------------->
@@ -312,7 +319,7 @@
 
                 <div id="myProject" class="tab-pane fade">
                     <div>
-                        <img class="myimg img-responsive zoom-effect title-img" src="images/project.png">
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_project.png">
                     </div>
 
                     <div class="row">

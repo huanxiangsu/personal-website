@@ -37,6 +37,8 @@ $(document).ready(function () {
     setupGallary();
     changeGallaryView();
     displayImgModal();
+
+    getResume();
     
 });
 
@@ -170,6 +172,28 @@ function scrollToTop() {
         $("html, body").animate({
             scrollTop: 0
         }, "slow");
+    });
+}
+
+
+function getResume() {
+    $("#resume-tab").on('click', function () {
+        if ($('#resume-block').text() == "") {
+            $.ajax({
+                "type": "POST",
+                "url": './data/resume.html',
+                'success': function (data) {
+                    $('#resume-block').append(data);
+                },
+                "error": function (xhr, status, error) {
+                    if (xhr.status == '404') {
+                        $('#resume-block').append("<h1>Resume File Not Found!</h1>");
+                    } else {
+                        $('#resume-block').append("<h1>Failed to Load Resume!</h1>");
+                    }
+                }
+            });
+        }
     });
 }
 
