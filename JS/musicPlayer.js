@@ -4,20 +4,30 @@ var slider_max = 366.297;
 var bar_min = 0;
 var bar_max = 356.391;
 var is_moving = false;  // is mouse moving over progress bar
+var myPlayer;
 
 $(document).ready(function () {
-    // initial_btn_width = parseFloat($('#slider-btn').css('left'));
-    setupMusicPlayer();
+    // setup playlist and enable all functionality
+    // if ajax failed, the music player function cannot click.
+    $.ajax({
+        "type": "POST",
+        "url": './data/music.json',
+        'success': function (data) {
+            myPlayer = new MusicPlayer(data);
+            enableMusicPlayerFunctions();
+        }
+    });
+    basicSetupMusicPlayer();
 });
 
 
-function setupMusicPlayer() {
+function basicSetupMusicPlayer() {
     openPlayList();
-    musicPlayerFunctions();
     changeBg();
 }
 
 
+// the main Music player class
 function MusicPlayer(playlist) {
     this.playlist = playlist;
     this.index = 0;
@@ -25,25 +35,31 @@ function MusicPlayer(playlist) {
     this.random = false;
     this.single = false;
 
-    $('#songs-Length').text(this.playlist.length);
+    if (playlist !== undefined) {
+        $('#songs-Length').text(this.playlist.length);
 
-    for (var i = 0; i < this.playlist.length; ++i) {
-        var div;
-        div = '<div class="playlist-song-block">';
+        // setup playlist
+        for (var i = 0; i < this.playlist.length; ++i) {
+            var div;
+            div = '<div class="playlist-song-block">';
             div += '<div class="row playlist-song">';
-                div += '<div class="col-sm-1 playlist-song-number">' + (i + 1) + '</div>';
-                div += '<div class="col-sm-11">';
-                    div += '<div class="playlist-song-title">' + this.playlist[i].title + '</div>';
-                    div += '<div class="playlist-song-artist">' + this.playlist[i].artist + '</div>';
-                div += '</div>';
+            div += '<div class="col-sm-1 playlist-song-number">' + (i + 1) + '</div>';
+            div += '<div class="col-sm-11">';
+            div += '<div class="playlist-song-title">' + this.playlist[i].title + '</div>';
+            div += '<div class="playlist-song-artist">' + this.playlist[i].artist + '</div>';
             div += '</div>';
-        div += '</div>';
+            div += '</div>';
+            div += '</div>';
 
-        $('.playlist-block').append(div);
+            $('.playlist-block').append(div);
+        }
+    } else {
+        console.log('music playlist is undefined ...');
     }
+    
 }
 
-
+// Music player functions list
 MusicPlayer.prototype = {
     /**
      * Play a song in the playlist.
@@ -62,7 +78,7 @@ MusicPlayer.prototype = {
             sound = song_data.howl;
         } else {
             sound = song_data.howl = new Howl({
-                src: ['./music/' + song_data.file + '.mp3'],
+                src: ['./music/' + song_data.file],
                 html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
                 volume: 1,
                 autoplay: false,
@@ -191,7 +207,6 @@ MusicPlayer.prototype = {
      */
     skipTo: function (index) {
         var self = this;
-        
 
         // Stop the current track.
         if (this.playlist[this.index].howl) {
@@ -218,19 +233,13 @@ MusicPlayer.prototype = {
      */
     volume: function (val) {
         var self = this;
-
         // Update the global volume (affecting all Howls).
         Howler.volume(val);
-
-        // Update the display on the slider.
-        var barWidth = (val * 90) / 100;
-        barFull.style.width = (barWidth * 100) + '%';
-        sliderBtn.style.left = (window.innerWidth * barWidth + window.innerWidth * 0.05 - 25) + 'px';
     },
 
     /**
      * Seek to a new position in the currently playing track.
-     * @param  {Number} per Percentage through the song to skip.
+     * @param  {Number} percent Percentage through the song to skip.
      */
     seek: function (percent) {
         var sound = this.playlist[this.index].howl;
@@ -238,6 +247,10 @@ MusicPlayer.prototype = {
         sound.seek(sound.duration() * percent);
     },
 
+    /**
+     * get the time when moving the slider btn in progress bar.
+     * @param {Number} percent Percentage through the song to skip.
+     */
     getMovingSeek: function (percent) {
         var sound = this.playlist[this.index].howl;
         // Convert the percent into a seek position.
@@ -270,82 +283,8 @@ MusicPlayer.prototype = {
 };
 
 
-// Setup our new audio player class and pass it the playlist.
-var myPlayer = new MusicPlayer([
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Enchanted',
-        artist: "Taylor Swift",
-        img: "##",
-        file: 'Taylor Swift - Enchanted',
-        howl: null
-    },
-    {
-        title: 'Blank Space',
-        artist: "Taylor Swift",
-        img: "##",
-        file: 'Taylor Swift - Blank Space',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-    {
-        title: 'Wildest Dreams',
-        artist: 'Taylor Swift',
-        img: "##",
-        file: 'Taylor_Swift_-_Wildest_Dreams',
-        howl: null
-    },
-]);
 
-
-function musicPlayerFunctions() {
+function enableMusicPlayerFunctions() {
     $('#play-btn').on('click', function () {
         myPlayer.play();
         playMusicBtn();
@@ -391,24 +330,20 @@ function musicPlayerFunctions() {
         if (is_moving) {
             is_moving = false;
             myPlayer.seek(percent_moving);
-            console.log('percent == ' + percent_moving);
-        }
-        
+        } 
     });
 
     $('*').on('mouseup', function () {
         if (is_moving) {
             is_moving = false;
             myPlayer.seek(percent_moving);
-            console.log('percent == ' + percent_moving);
         }
     });
 
-    $('.music-player').on('mousemove', function (event) {
+    $('#myMusic').on('mousemove', function (event) {
         if (is_moving) {
             var bar_width = event.pageX - $('#bar-moving').offset().left;
             
-            // var slider_width = initial_btn_width + bar_width;
             if (bar_width >= bar_min && bar_width <= bar_max) {
                 percent_moving = bar_width / bar_max;
                 var slider_width = bar_width + initial_btn_width;
@@ -452,11 +387,13 @@ function formatDuration(duration) {
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 }
 
+
 function openPlayList() {
     $('#list-btn').on('click', function () {
         $('.playlist-block').slideToggle(500);
     });
 }
+
 
 function updateProgressBar(percent) {
     var bar_width = bar_max * percent;
@@ -464,6 +401,7 @@ function updateProgressBar(percent) {
     var slider_width = bar_width + initial_btn_width;
     $('#slider-btn').css('left', slider_width + 'px');
 }
+
 
 function playMusicBtn() {
     $('#play-btn').hide();
@@ -475,6 +413,7 @@ function playMusicBtn() {
     });
 }
 
+
 function pauseMusicBtn() {
     $('#pause-btn').hide();
     $('#play-btn').css({
@@ -485,6 +424,7 @@ function pauseMusicBtn() {
     });
 }
 
+
 function refreshMusicImg() {
     $('.music-img').removeClass('spin-effect');
     window.setTimeout(function () {
@@ -492,6 +432,7 @@ function refreshMusicImg() {
     }, 10);
     
 }
+
 
 var bgIndex = 0;
 function changeBg() {
@@ -525,70 +466,5 @@ function changeBg() {
         bgIndex = 0;
     }
 }
+window.setInterval(changeBg, 9000);
 
-window.setInterval(changeBg, 5000);
-
-
-
-function increment() {
-    // $('#next-btn').on('click', function () {
-    //     var full_width = parseFloat( $('#bar-empty').css('width'));
-    //     var ten = full_width / 10;
-    //     var current_width = parseFloat( $('#bar-moving').css('width'));
-    //     current_width += ten;
-    //     current_width = current_width / full_width * 0.9 * 100;
-    //     current_width = current_width + '%';
-
-    //     var btn_current_width = parseFloat($('#slider-btn').css('left'));
-    //     btn_current_width += ten;
-
-    //     $('#bar-moving').css('width', current_width);
-    //     $('#slider-btn').css('left', btn_current_width + 'px');
-    // });
-}
-
-/*
-function progress_movement() {
-    $('#bar-empty').on('click', function (event) {
-        var bar_width = event.pageX - $(this).offset().left;
-        var full_width = parseFloat($('#bar-empty').css('width'));
-        // bar_width = bar_width / full_width * 0.9 * 100;
-        $('#bar-moving').css('width', bar_width + 'px');
-        var slider_width = bar_width + initial_btn_width;
-        $('#slider-btn').css('left', slider_width + 'px');
-
-        // console.log(bar_width);
-        // console.log(full_width);
-        // console.log(slider_width);
-
-    });
-
-    $('#slider-btn').on('mousedown', function (event) {
-        is_moving = true;
-    });
-
-    $('#slider-btn').on('mouseup', function (event) {
-        is_moving = false;
-    });
-    $('*').on('mouseup', function () {
-        is_moving = false;
-    });
-
-    $('.music-player').on('mousemove', function (event) {
-        if (is_moving) {
-            // console.log(event.clientX);
-            // console.log(event.pageX);
-            // console.log(window.innerWidth);
-            // console.log('--------------------');
-
-            var bar_width = event.pageX - $('#bar-moving').offset().left;
-            var slider_width = initial_btn_width + bar_width;
-            if (bar_width >= bar_min && bar_width <= bar_max) {
-                $('#bar-moving').css('width', bar_width + 'px');
-                $('#slider-btn').css('left', slider_width + 'px');
-            }
-
-        }
-    });
-}
-*/

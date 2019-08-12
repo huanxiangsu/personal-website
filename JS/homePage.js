@@ -187,9 +187,9 @@ function getResume() {
                 },
                 "error": function (xhr, status, error) {
                     if (xhr.status == '404') {
-                        $('#resume-block').append("<h1>Resume File Not Found!</h1>");
+                        $('#resume-block').append("<h2 class='fail-text'>Resume File Not Found!</h2>");
                     } else {
-                        $('#resume-block').append("<h1>Failed to Load Resume!</h1>");
+                        $('#resume-block').append("<h2 class='fail-text'>Failed to Load Resume!</h2>");
                     }
                 }
             });
