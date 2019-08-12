@@ -34,11 +34,9 @@ $(document).ready(function () {
 
     displayCalender();
 
-    setupGallary();
-    changeGallaryView();
-    displayImgModal();
-
     getResume();
+
+    sendComment();
     
 });
 
@@ -194,6 +192,37 @@ function getResume() {
                 }
             });
         }
+    });
+}
+
+function sendComment() {
+    $('#comment-send').on('click', function () {
+        $.post("./data/comment.php",
+            {
+                "comment-name": $('#comment-name').val(),
+                "comment-email": $('#comment-email').val(),
+                "comment-area": $('#comment-area').val()
+            },
+            function (data, status) {
+                console.log(status);
+                $('#comment-response').text(data);
+                $('#comment-response').css({
+                    'visibility': 'visible',
+                    'opacity': '1'
+                });
+                window.setTimeout(function () {
+                    $('#comment-response').css({
+                        'opacity': '0'
+                    });
+                    window.setTimeout(function () {
+                        $('#comment-response').css({
+                            'visibility': 'hidden'
+                        });
+                        $('#comment-response').text("");
+                    }, 1000);
+                }, 2500);
+            }
+        );
     });
 }
 

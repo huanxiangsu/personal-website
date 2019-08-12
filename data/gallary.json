@@ -1,0 +1,54 @@
+[
+    {
+        "src": "images/p6.jpg",
+        "alt": "image1"
+    },
+    {
+        "src": "images/stars.png",
+        "alt": "image2: beautiful stars"
+    },
+    {
+        "src": "images/p7.jpg",
+        "alt": "image3: beautiful sunset"
+    },
+    {
+        "src": "images/p8.jpg",
+        "alt": "image4: magic tree"
+    },
+    {
+        "src": "images/z2.jpg",
+        "alt": "image5: beautiful village"
+    },
+    {
+        "src": "images/s5.jpeg",
+        "alt": "image6: Night bridge"
+    },
+    {
+        "src": "images/p9.jpg",
+        "alt": "image7"
+    },
+    {
+        "src": "images/p10.jpg",
+        "alt": "image8: Green Hill"
+    },
+    {
+        "src": "images/s6.jpeg",
+        "alt": "image9: spaces"
+    },
+    {
+        "src": "images/p11.jpg",
+        "alt": "image12: Pink Sky"
+    },
+    {
+        "src": "images/p3.jpg",
+        "alt": "image11: Beautiful Sky"
+    },
+    {
+        "src": "images/p2.jpg",
+        "alt": "image10: Sleeping"
+    },
+    {
+        "src": "images/s9.jpg",
+        "alt": "image13: Spreading space light"
+    }
+]

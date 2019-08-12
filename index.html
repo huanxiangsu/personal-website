@@ -439,16 +439,11 @@
                         <p class="text-center" id="moment-time" style="margin-top:4px"></p>
                     </div>
                 </div>
-                
-
             </div>
-            
-
         </div>
-
     </div>
+
     <div class="row" style="height:20px"></div>
-    
 </div>
 
 <!--------------------------------------------- Bottom contact site -------------------------------------->
@@ -457,60 +452,65 @@
     <div class="container">
         <h2 class="text-center">Contact</h2>
         <div class="row">
+
             <div class="col-sm-5">
                 <p style="font-size:20px">Contact Me:</p>
                 <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce; margin-left: 33px"></span>Portland, US</p>
                 <p><span class="glyphicon glyphicon-phone contact-icon"></span>+1 503-515-1075</p>
                 <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a></p>
                 <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a></p>
-                <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>
-
-                
+                <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>     
             </div>
 
             <div class="col-sm-7">
                 <div class="row">
                     <div class="col-sm-6 form-group">
-                        <input class="form-control" placeholder="Name" type="text" required>
+                        <input class="form-control" placeholder="Name" type="text" id="comment-name" required>
                     </div>
                     <div class="col-sm-6 form-group">
-                        <input class="form-control" placeholder="Email" type="email" required>
+                        <input class="form-control" placeholder="Email" type="email" id="comment-email" required>
                     </div>
                 </div>
-                <textarea class="form-control" placeholder="Optional: Send Me Comment" rows="5"></textarea><br>
+                <textarea class="form-control" placeholder="Optional: Send Me Comment" id="comment-area" rows="5"></textarea><br>
                 <div class="row">
-                    <div class="col-sm-12 form-group">
+                    <div class="col-sm-12 form-group" style="text-align:right">
+                        <p id="comment-response"></p>
+                        <button id="comment-send" class="btn btn-primary transparent-primary-btn" type="submit">Send</button>
                         
-                        <button class="btn btn-primary pull-right transparent-primary-btn" type="submit">Send</button>
-                        <p class="pull-right"></p>
                     </div>
                 </div>
             </div>
+
         </div>
         <hr>
         <p class="text-center">copyright</p>
     </div>
 </div>
 
-<div id="gallary-img-modal" class="modal" role="dialog">    
+<!--------------------------------------------- gallary modal site -------------------------------------->
+
+<div id="gallary-img-modal" class="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-close">
             <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
         </div>
         <img class="img-responsive img-rounded modal-img" id="modal-img" src="#">
-        <div id="modal-img-caption">aaaaaaaa</div>
+        <div id="modal-img-caption"></div>
     </div>
 </div>
 
+
+<!-- go to top botton -->
 <div class="scroll-top-block" id="scroll-top">
     <button class="btn scroll-top-btn" title="Top">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
 
+
+<!-- js sources -->
 <script type="text/javascript" src="JS/gallary.js"></script>
 <script type="text/javascript" src="JS/musicPlayer.js"></script>
 
 </body>
 </html>
-

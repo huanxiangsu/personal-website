@@ -293,13 +293,11 @@
 .gallary {
     display: flex;
     flex-wrap: wrap;
-    /* padding: 7px 3px; */
     border: 30px solid transparent;
     border-image-source: url("../images/border11.png");
     border-image-slice: 53;
     border-image-repeat: round;
 }
-
 
 
 .gallary-col {
@@ -774,6 +772,23 @@
     font-size: 24px;
     margin-right: 10px;
     margin-left: 30px;
+}
+
+#comment-send {
+    text-align: right;
+    display: inline-block;
+}
+
+#comment-response {
+    display: inline-block;
+    margin: auto;
+    margin-right: 15px;
+    text-align: right;
+    color: rgba(255, 0, 0, 0.7);
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 
