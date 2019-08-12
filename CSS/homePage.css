@@ -226,6 +226,10 @@
     margin: auto;
 }
 
+.home-img {
+    cursor: pointer;
+}
+
 .tab-content {
     margin-right: 35px;
 }
@@ -765,7 +769,7 @@
 
 /********************************* bottom Contact **********************/
 #contact {
-    background-color: rgba(157, 157, 194, 0.5);
+    background-color: rgba(108, 138, 175, 0.25);
 }
 
 .contact-icon {
@@ -810,7 +814,7 @@
     padding-left: 15px;
     padding-right: 25px;
     /* background-color: rgba(245, 234, 205, 0.164); */
-    background-color: rgba(248, 239, 212, 0.164);
+    background-color: rgba(235, 236, 240, 0.5);
 }
 
 .about-me-header {

@@ -1,8 +1,6 @@
 var calender_site = false;
 
 $(document).ready(function () {
-    // $('body').scrollspy({ target: "#to-contect, #side-calender-id", offset: 50 });
-
     window.onscroll = function () {
         scroll();
     };
@@ -23,21 +21,18 @@ $(document).ready(function () {
 
     $('[data-toggle="popover"').popover();
 
-    
 
-
+    // update current time every second
     window.setInterval(updateCurrentTime, 1000);
 
+    // add event listeners
     displayAboutMe();
     getProjects();
     displayProjects();
-
     displayCalender();
-
+    displayHomeImgInImgModal();
     getResume();
-
     sendComment();
-    
 });
 
 
@@ -223,6 +218,17 @@ function sendComment() {
                 }, 2500);
             }
         );
+    });
+}
+
+function displayHomeImgInImgModal() {
+    $('.home-img').on('click', function () {
+        var src = $(this).attr('src');
+        var alt = $(this).attr('alt');
+        $('#modal-img').attr('src', src);
+        $('#modal-img').attr('alt', alt);
+        $('#modal-img-caption').text(alt);
+        $('#gallary-img-modal').modal();
     });
 }
 
