@@ -51,14 +51,14 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right" id="myNav">
                     <li class="active"><a class="tab-link" data-toggle="pill" href="#home">Home</a></li>
-                    <li id="about-tab"><a class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
+                    <li><a id="about-tab" class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
                     <li><a id="resume-tab" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle tab-link" id="dropdown" href="#">Interest
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="tab-link" id="gallary-tab" data-toggle="pill" href="#myGallary">Gallary</a></li>
+                            <li><a class="tab-link" id="gallary-tab" data-toggle="pill" href="#myGallary">Gallery</a></li>
                             <li id="music-tab"><a class="tab-link" data-toggle="pill" href="#myMusic">Music</a></li>
                             <li id="project-tab"><a class="tab-link" data-toggle="pill" href="#myProject" :last-child>Project</a></li>
                         </ul>
@@ -124,9 +124,6 @@
                             <div class="item">
                                 <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg" alt="image-2">
                             </div>
-                            <!-- <div class="item">
-                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/p6.jpg" alt="image-3">
-                            </div> -->
                             <div class="item">
                                 <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg" alt="image-4">
                             </div>
@@ -169,7 +166,7 @@
                         <div class="col-sm-6">
                             <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/p9.jpg" alt="Sunset Sky">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 intro-text">
                             <h1>Lorem Ipsum</h1>    
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -179,9 +176,9 @@
                     <div class="row" style="height:35px"></div>
 
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h1>An Adventure in the Hills</h1>
-                            <p>“I cannot tell,” she returned, “but you may come with me, if you like. If Oz will not give you any brains you will be no worse off than you are now.”</p>
+                        <div class="col-sm-6 intro-text">
+                            <h1>Lorem Ipsum</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                         <div class="col-sm-6">
                             <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/p10.jpg" alt="Adventure Hill">
@@ -195,7 +192,7 @@
                         <div class="col-sm-6">
                             <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c4.jpg" alt="Lantern with Glim">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 intro-text">
                             <h1>Lorem Ipsum</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -206,10 +203,11 @@
                     <div class="row" style="height:35px"></div>
                     
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h1>An Adventure in the Hills</h1>
-                            <p>“I cannot tell,” she returned, “but you may come with me, if you like. If Oz will not give you any brains you
-                                will be no worse off than you are now.”</p>
+                        <div class="col-sm-6 intro-text">
+                            <h1>Lorem Ipsum</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
                         </div>
                         <div class="col-sm-6">
                             <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c1.jpg" alt="Adventure Hill">
@@ -227,9 +225,26 @@
                     <div>
                         <img class="myimg img-responsive zoom-effect title-img" src="images/my_introduction.png">
                     </div>
-                    <p>...........</p>
-                    
-            
+                    <div id="intro-block" class="personal-block">
+                        <img class="myimg img-responsive img-rounded zoom-effect intro-img" src="images/x11.jpg">
+                        <p class="intro-text" style="font-size:24px; margin: 10px 0px 0px">Hello I'm</p>
+                        <h2 class="intro-text" style="font-size:36px; font-weight: 900; margin-top: 0px; color: rgba(0,0,0,0.8);">Huanxiang Su</h2>
+                        <p class="intro-text">I am an undergraduate student at <em>Portland State
+                                    University</em> and currently pursuing Bachelor degree of Computer Science. My background on computer
+                                science started when I first attend university after high school graduation. Since I am pretty interesting in
+                                computer so I chose computer science as my major. So far I am pretty enjoying learning CS and hoping I can
+                                learn more knowledge in this area, especially in programming languages and full-stack web development.
+                                Therefore, software engineer is my currently pursuing goal on my career.</p>
+                        <p></p><br>
+                        <p class="intro-text">In my leisure time, I like playing playing video games, listening to music, and watching
+                                TV and reality show. So in my personal website, I make a very simple music player to play some of my favorite
+                                songs. I also collected lots of beautiful and amazing anime images when I was young and I pretty like watching
+                                anime at that time, and thus I make a simple gallery page to exhibit my favorite images.</p>
+                        <p></p><br>
+                        <p class="intro-text">Right now, my personal interest is to learn how to develop game in both web application
+                                and mobile application, and I would like to learn more about Photoshop to enhance my skill in editing photos as
+                                well as making stuff for my application.</p>
+                    </div>
                 </div>
 
 <!--------------------------------------------- resume site -------------------------------------->
@@ -239,7 +254,7 @@
                         <img class="myimg img-responsive zoom-effect title-img" src="images/my_resume.png">
                     </div>
 
-                    <div id="resume-block"></div>
+                    <div id="resume-block" class="personal-block"></div>
                 
                 </div>
 
@@ -317,7 +332,7 @@
             
                 <div id="myGallary" class="tab-pane fade">
                     <div>
-                        <img class="myimg img-responsive zoom-effect title-img" src="images/gallary.png">
+                        <img class="myimg img-responsive zoom-effect title-img" src="images/my_gallery.png">
                     </div>
                     <div class="gallary-icon-list">
                         <i class='fas fa-image gallary-icon' id="lg1"></i>
@@ -371,7 +386,7 @@
                                     <h3 class="project-body-title">SIFT</h3>
                                     <p class="project-body-content">Scale-Invariant Feature Transform Algorithm for image feature detection</p>
                                     <div class="project-body-footer">
-                                        <a class = "project-body-footer-detail" href="#" target="_blank"><button class="btn btn-primary"
+                                        <a class = "project-body-footer-detail" href="https://github.com/huanxiangsu/my-sift" target="_blank"><button class="btn btn-primary"
                                                 type="button">Details >></button></a>
                                         <a class = "project-body-footer-demo" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover">
                                             <button class="btn btn-danger" type="button">Demo >></button>
@@ -386,8 +401,6 @@
                         </div>
                         <!-- end third project -->
                     </div>
-
-                    
                 </div>
             </div>
             <!-- end tab content -->
@@ -434,7 +447,7 @@
                             src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23039BE5&amp;ctz=America%2FLos_Angeles&amp;src=eGlhbmc2MjU3NjQ1NjNAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%237986CB&amp;color=%2333B679&amp;color=%230B8043&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showCalendars=0&amp;showPrint=0&amp;showTz=1&amp;showTabs=0&amp;mode=MONTH"
                             style="border-width:0" width="100%" height="100%" frameborder="0" scrolling="no">
                         </iframe>
-                        <p class="text-center" id="moment-time" style="margin-top:4px"></p>
+                        <p class="text-center" id="moment-time" style="margin-top:4px; font-size: 16px"></p>
                     </div>
                 </div>
             </div>

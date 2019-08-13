@@ -32,6 +32,7 @@ $(document).ready(function () {
     displayCalender();
     displayHomeImgInImgModal();
     getResume();
+    // getIntro();
     sendComment();
 });
 
@@ -189,6 +190,31 @@ function getResume() {
         }
     });
 }
+
+/*
+function getIntro() {
+    $("#about-tab").on('click', function () {
+        console.log('aa');
+        if ($('#intro-block').text() == "") {
+            $.ajax({
+                "type": "POST",
+                "url": './data/intro.html',
+                'success': function (data) {
+                    $('#intro-block').append(data);
+                },
+                "error": function (xhr, status, error) {
+                    if (xhr.status == '404') {
+                        $('#intro-block').append("<h2 class='fail-text'>Introduction File Not Found!</h2>");
+                    } else {
+                        console.log(xhr.status);
+                        $('#intro-block').append("<h2 class='fail-text'>Failed to Load Introduction!</h2>");
+                    }
+                }
+            });
+        }
+    });
+}
+*/
 
 function sendComment() {
     $('#comment-send').on('click', function () {
