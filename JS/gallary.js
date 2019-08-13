@@ -1,12 +1,15 @@
 var currentCol = 0;
 var totalCol = 3;
+var totalCol3 = 0;
+var is_view2 = false;
+var custom_view_changed = false;
+var global_view2 = false;
 
 $(document).ready(function () {
     $.ajax({
         "type": "POST",
         "url": './data/gallary.json',
         'success': function (data) {
-            // setupGallary(data);
             setupGallary(data);
             changeGallaryView();
             displayImgModal();
@@ -33,30 +36,28 @@ function setupGallary(imgList) {
         $(this).parent().remove();
     });
 
-    // $('.gallary').css({ 'opacity': '1' });
-    // $('#gallary-tab').on('click', function () {
-    //     $('.gallary').css({ 'opacity': '1' });
-    // });
-}
-
-function setupGallary1(imgList) {
-    for (var i = 0; i < imgList.length; ++i) {
-        var src = imgList[i].src;
-        var alt = imgList[i].alt
-        var anImg = '<div class="gallary-col">';
-        anImg += '<div class="gallary-img">';
-        anImg += '<img class="myimg img-responsive img-rounded zoom-rotate-effect" src="' + src + '" alt="' + alt + '">';
-        anImg += '</div>';
-        anImg += '</div>';
-        $('.gallary').append(anImg);
+    // auto change view2 if width size 1000 .. 1200
+    if ($(window).width() >= 1000 && $(window).width() <= 1200) {
+        view13To2();
+        global_view2 = true;
     }
 
-    // add close botton to gallary image
-    $('.gallary-img').append('<button class="close-btn" type="button" title="Close">x</button>');
-
-    // remove img when clicked close btn
-    $('.close-btn').on('click', function () {
-        $(this).parent().remove();
+    // auto change view on resize, no effect if user clicked custom views
+    $(window).on('resize', function () {
+        if (custom_view_changed === false) {
+            if ($(this).width() >= 1000 && $(this).width() <= 1200) {
+                if (!global_view2) {
+                    view13To2();
+                    global_view2 = true;
+                }
+                
+            } else {
+                if (global_view2) {
+                    view2To13();
+                    global_view2 = false;
+                }
+            }
+        }
     });
 }
 
@@ -77,14 +78,65 @@ function addAllImgToGallary(imgList) {
 
 function changeGallaryView() {
     $('#lg1').on('click', function () {
+        custom_view_changed = true;
         $('.gallary-col').css({ 'max-width': '100%', 'flex': '100%' });
+        view2To13();
     });
+
     $('#lg2').on('click', function () {
+        custom_view_changed = true;
         $('.gallary-col').css({ 'max-width': '50%', 'flex': '50%' });
+        view13To2();
     });
+
     $('#lg3').on('click', function () {
+        custom_view_changed = true;
         $('.gallary-col').css({ 'max-width': '33.3%', 'flex': '33.3%' });
+        view2To13();
     });
+}
+
+function view2To13() {
+    if (is_view2) {
+        console.log('now view13');
+        for (var i = 0; i < totalCol3; ++i) {
+            if (document.getElementById('pre-col-' + i)) {
+                $('#gal-col-2').append($('#pre-col-' + i));
+            }
+        }
+        is_view2 = false;
+    }
+}
+
+
+function view13To2() {
+    if (!is_view2) {
+        console.log('now view2');
+        var children = $('#gal-col-2').children();
+        var len = children.length;
+        totalCol3 = len;
+
+        for (var i = 0; i < len; i += 2) {
+            children.eq(i).attr('id', 'pre-col-' + i);
+
+            if ($('#gal-col-0').children().length < $('#gal-col-1').children().length) {
+                $('#gal-col-0').append(children.eq(i));
+            } else {
+                $('#gal-col-1').append(children.eq(i));
+            }
+            
+            if (i + 1 < len) {
+                var ii = i + 1;
+                children.eq(i + 1).attr('id', 'pre-col-' + ii);
+                if ($('#gal-col-0').children().length < $('#gal-col-1').children().length) {
+                    $('#gal-col-0').append(children.eq(i + 1));
+                } else {
+                    $('#gal-col-1').append(children.eq(i + 1));
+                }
+            }
+        }
+        is_view2 = true;
+    }
 }
 
 

@@ -77,7 +77,6 @@ function displayProjects() {
     $('#side-project-id').on('click', function (event) {
         $('#myNav>li, .dropdown-menu>li').removeClass('active');
         $('.dropdown, #project-tab').addClass('active');
-        
         $(this).tab('show');
         
     });

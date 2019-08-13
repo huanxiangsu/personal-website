@@ -134,6 +134,7 @@ MusicPlayer.prototype = {
         sound.play();
 
         // Update the track display.
+        setActive(index + 1);
         $('.music-name-title').text( (index+1) + '. ' + song_data.title);
         $('.music-name-artist').text(song_data.artist);
 
@@ -311,6 +312,7 @@ function enableMusicPlayerFunctions() {
 
     $('.playlist-song').on('click', function () {
         var index = $(this).find('.playlist-song-number').eq(0).text();
+        setActive(index);
         refreshMusicImg();
         myPlayer.skipTo(index - 1);
     });
@@ -392,6 +394,11 @@ function openPlayList() {
     $('#list-btn').on('click', function () {
         $('.playlist-block').slideToggle(500);
     });
+}
+
+function setActive(index) {
+    $('.playlist-block').children().removeClass('active');
+    $('.playlist-block').children().eq(index).addClass('active');
 }
 
 

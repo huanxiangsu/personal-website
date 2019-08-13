@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right" id="myNav">
                     <li class="active"><a class="tab-link" data-toggle="pill" href="#home">Home</a></li>
-                    <li><a id="about-tab" class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
+                    <li id="about-tab"><a class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
                     <li><a id="resume-tab" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle tab-link" id="dropdown" href="#">Interest
@@ -181,7 +181,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                         <div class="col-sm-6">
-                            <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/p10.jpg" alt="Adventure Hill">
+                            <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c5.jpg" alt="Adventure Hill">
                         </div>
                         
                     </div>
@@ -461,13 +461,13 @@
 
 <div id="contact" class="container-fluid">
     <div class="container">
-        <h2 class="text-center">Contact</h2>
+        <h2 class="text-center my-text-title">CONTACT</h2>
         <div class="row">
 
-            <div class="col-sm-5">
-                <p style="font-size:20px">Contact Me:</p>
+            <div class="col-sm-5 my-text">
+                <p style="font-size:22px; color: rgba(0, 0, 0,0.63);">Contact Me:</p>
                 <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce; margin-left: 33px"></span>Portland, US</p>
-                <p><span class="glyphicon glyphicon-phone contact-icon"></span>+1 503-515-1075</p>
+                <p><span class="glyphicon glyphicon-phone contact-icon" style="color:rgb(51, 50, 49,0.65)"></span>+1 503-515-1075</p>
                 <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a></p>
                 <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a></p>
                 <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>     
@@ -482,7 +482,7 @@
                         <input class="form-control" placeholder="Email" type="email" id="comment-email" required>
                     </div>
                 </div>
-                <textarea class="form-control" placeholder="Optional: Send Me Comment" id="comment-area" rows="5"></textarea><br>
+                <textarea class="form-control" placeholder="Optional: Send Me Comment" id="comment-area" rows="6"></textarea><br>
                 <div class="row">
                     <div class="col-sm-12 form-group" style="text-align:right">
                         <p id="comment-response"></p>
@@ -494,8 +494,11 @@
 
         </div>
         <hr>
-        <p class="text-center">copyright</p>
-        <p class="text-center">Last Modified: 08/14/2019 10:00 AM</p>
+        <div class="my-text text-center">
+            <p class="text-center">copyright ©</p>
+            <p class="text-center">Last Modified: 08/14/2019 10:00 AM</p>
+        </div>
+        
     </div>
 </div>
 
@@ -504,7 +507,7 @@
 <div id="gallary-img-modal" class="modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-close">
-            <button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
+            <button type="button" class="close modal-close-btn zoom-effect" data-dismiss="modal">&times;</button>
         </div>
         <img class="img-responsive img-rounded modal-img" id="modal-img" src="#">
         <div id="modal-img-caption"></div>

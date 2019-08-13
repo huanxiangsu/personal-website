@@ -253,11 +253,22 @@
 .intro-img {
     height: 200px;
     width: 240px;
-    margin: auto;
-    
+    margin: auto;  
 }
 
-
+.my-text {
+    font-family: "Montserrat", Arial, sans-serif;
+    color: #999999;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.my-text-title {
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.8;
+    color: rgba(0,0,0,0.7);
+    font-size:36px;
+    font-weight: 900;
+}
 
 .intro-text {
     font-family: "Montserrat", Arial, sans-serif;
@@ -334,6 +345,7 @@
 }
 
 .gallary-img {
+    cursor: pointer;
     padding: 13px;
     margin: 0 5px 10px 0;
     border-radius: 10px;
@@ -359,7 +371,7 @@
         transform: scale(1.07) rotate(2deg);
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
     .gallary-col {
         flex: 100%;
         max-width: 100%;
@@ -717,23 +729,41 @@
     position: relative;
     margin: 0px;
     cursor: pointer;
+    transition: background-color 0.45s;
 }
 
 .playlist-song-number {
     margin-top: 15px;
     color: rgba(230, 229, 229, 0.8);
+    transition: color 0.45s;
 }
 
 .playlist-song-title {
     font-size: 21px;
     color: rgba(230, 229, 229, 0.8);
     font-weight: 430;
+    transition: color 0.45s;
 }
 
 .playlist-song-artist {
     font-size: 14px;
     color: rgba(230, 229, 229, 0.5);
+    transition: color 0.45s;
 }
+
+.playlist-block>.active>.playlist-song {
+    background-color: rgba(218, 216, 214, 0.55);
+}
+.playlist-block>.active>.playlist-song>.playlist-song-number {
+    color: rgba(12, 12, 12, 0.5);
+}
+.playlist-block>.active>.playlist-song>.col-sm-11>.playlist-song-title {
+    color: rgba(12, 12, 12, 0.5);
+}
+.playlist-block>.active>.playlist-song>.col-sm-11>.playlist-song-artist {
+    color: rgba(12, 12, 12, 0.5);
+}
+
 
 
 /*------------------------------- Project ------------------------------*/
@@ -911,6 +941,7 @@
     color: rgba(12, 2, 2, 0.6);
     border-radius: 50%;
     font-size: 24px;
+    transition: all 0.4s;
 }
 
 .scroll-top-btn:hover {
