@@ -63,9 +63,10 @@ function setupGallary(imgList) {
 
 function addImgToGallary(src, alt) {
     var col = currentCol % totalCol;
-    var anImg = '<div class="gallary-img">';
+    var anImg = '<div class="gallary-img ' + 'img-num-' + col + currentCol  + '">';
     anImg += '<img class="myimg img-responsive img-rounded zoom-rotate-effect" src="' + src + '" alt="' + alt + '">';
     anImg += '</div>';
+    
     $('#gal-col-' + col).append(anImg);
     ++currentCol;
 }
@@ -98,7 +99,7 @@ function changeGallaryView() {
 
 function view2To13() {
     if (is_view2) {
-        console.log('now view13');
+        // console.log('now view13');
         for (var i = 0; i < totalCol3; ++i) {
             if (document.getElementById('pre-col-' + i)) {
                 $('#gal-col-2').append($('#pre-col-' + i));
@@ -111,7 +112,7 @@ function view2To13() {
 
 function view13To2() {
     if (!is_view2) {
-        console.log('now view2');
+        // console.log('now view2');
         var children = $('#gal-col-2').children();
         var len = children.length;
         totalCol3 = len;

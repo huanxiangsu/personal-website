@@ -1,72 +1,88 @@
 [
     {
+        "title": "Running Out",
+        "artist": "Demo 1",
+        "img": "#",
+        "file": "./music/running_out.mp3",
+        "howl": null
+    },
+    {
+        "title": "80s vibe",
+        "artist": "Demo 2",
+        "img": "#",
+        "file": "./music/80s_vibe.mp3",
+        "howl": null
+    },
+    {
+        "title": "Rave Digger",
+        "artist": "Demo 3",
+        "img": "#",
+        "file": "./music/rave_digger.mp3",
+        "howl": null
+    },
+
+    {
         "title": "Wildest Dreams",
         "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "img": "#",
+        "file": "./music/Taylor_Swift_-_Wildest_Dreams.mp3",
         "howl": null
     },
     {
         "title": "Enchanted",
         "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor Swift - Enchanted.mp3",
+        "img": "#",
+        "file": "./music/Taylor Swift - Enchanted.mp3",
         "howl": null
     },
     {
         "title": "Blank Space",
         "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor Swift - Blank Space.mp3",
+        "img": "#",
+        "file": "./music/Taylor Swift - Blank Space.mp3",
+        "howl": null
+    },
+    
+    {
+        "title": "Running Out",
+        "artist": "Demo 1",
+        "img": "#",
+        "file": "./music/running_out.mp3",
         "howl": null
     },
     {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "title": "80s vibe",
+        "artist": "Demo 2",
+        "img": "#",
+        "file": "./music/80s_vibe.mp3",
         "howl": null
     },
     {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "title": "Rave Digger",
+        "artist": "Demo 3",
+        "img": "#",
+        "file": "./music/rave_digger.mp3",
         "howl": null
     },
     {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "title": "Running Out",
+        "artist": "Demo 1",
+        "img": "#",
+        "file": "./music/running_out.mp3",
         "howl": null
     },
     {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "title": "80s vibe",
+        "artist": "Demo 2",
+        "img": "#",
+        "file": "./music/80s_vibe.mp3",
         "howl": null
     },
     {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
-        "howl": null
-    },
-    {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
-        "howl": null
-    },
-    {
-        "title": "Wildest Dreams",
-        "artist": "Taylor Swift",
-        "img": "##",
-        "file": "Taylor_Swift_-_Wildest_Dreams.mp3",
+        "title": "Rave Digger",
+        "artist": "Demo 3",
+        "img": "#",
+        "file": "./music/rave_digger.mp3",
         "howl": null
     }
 ]

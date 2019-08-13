@@ -78,7 +78,7 @@ MusicPlayer.prototype = {
             sound = song_data.howl;
         } else {
             sound = song_data.howl = new Howl({
-                src: ['./music/' + song_data.file],
+                src: [song_data.file],
                 html5: true, // Force to HTML5 so that the audio can stream in (best for large files).
                 volume: 1,
                 autoplay: false,
@@ -473,5 +473,5 @@ function changeBg() {
         bgIndex = 0;
     }
 }
-window.setInterval(changeBg, 9000);
+window.setInterval(changeBg, 6000);
 
