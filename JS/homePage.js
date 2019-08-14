@@ -34,6 +34,7 @@ $(document).ready(function () {
     getResume();
     // getIntro();
     sendComment();
+    autoScrollTab();
 });
 
 
@@ -170,7 +171,7 @@ function scrollToTop() {
 
 
 function getResume() {
-    $("#resume-tab").on('click', function () {
+    $("#resume-tab-a").on('click', function () {
         if ($('#resume-block').text() == "") {
             $.ajax({
                 "type": "POST",
@@ -254,6 +255,69 @@ function displayHomeImgInImgModal() {
         $('#modal-img').attr('alt', alt);
         $('#modal-img-caption').text(alt);
         $('#gallary-img-modal').modal();
+    });
+}
+
+function autoScrollTab() {
+    $('#about-tab-a').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 450, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $('#resume-tab-a').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 450, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $('#gallary-tab-a').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 450, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $('#music-tab-a').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 450, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $('#project-tab-a').on('shown.bs.tab', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 450, function () {
+                window.location.hash = hash;
+            });
+        }
     });
 }
 
