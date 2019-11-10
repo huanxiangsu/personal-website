@@ -35,6 +35,7 @@ $(document).ready(function () {
     // getIntro();
     sendComment();
     autoScrollTab();
+    homeScrollEffect();
 });
 
 
@@ -320,6 +321,31 @@ function autoScrollTab() {
         }
     });
 }
+
+
+function homeScrollEffect() {
+    $(document).on('scroll', function () {
+        var scrollTop = $(this).scrollTop();
+        var pageBottom = scrollTop + $(window).height();
+        console.log('top == ' + scrollTop + '  bottom == ' + pageBottom);
+        if ($(this).scrollTop() > 0) {
+            $('.home-row').eq(0).show();
+        }
+        if ($(this).scrollTop() > 80) {
+            $('.home-row').eq(1).show();
+        }
+        if ($(this).scrollTop() > 400) {
+            $('.home-row').eq(2).show();
+        }
+        if ($(this).scrollTop() > 650) {
+            $('.home-row').eq(3).show();
+        }
+    });
+}
+
+$(document).on('click', function () {
+    console.log($(document).scrollTop()); 
+});
 
 
 
