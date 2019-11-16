@@ -8,9 +8,10 @@ var global_view2 = false;
 $(document).ready(function () {
     $.ajax({
         "type": "POST",
-        "url": './data/gallary.json',
+        "url": './php/readData.php',
+        "data": 'data=gallery',
         'success': function (data) {
-            setupGallary(data);
+            setupGallary(JSON.parse(data));
             changeGallaryView();
             displayImgModal();
         },
@@ -61,6 +62,12 @@ function setupGallary(imgList) {
     });
 }
 
+function addAllImgToGallary(imgList) {
+    for (var i = 0; i < imgList.length; ++i) {
+        addImgToGallary(imgList[i].src, imgList[i].alt);
+    }
+}
+
 function addImgToGallary(src, alt) {
     var col = currentCol % totalCol;
     var anImg = '<div class="gallary-img ' + 'img-num-' + col + currentCol  + '">';
@@ -71,11 +78,6 @@ function addImgToGallary(src, alt) {
     ++currentCol;
 }
 
-function addAllImgToGallary(imgList) {
-    for (var i = 0; i < imgList.length; ++i) {
-        addImgToGallary(imgList[i].src, imgList[i].alt);
-    }
-}
 
 function changeGallaryView() {
     $('#lg1').on('click', function () {

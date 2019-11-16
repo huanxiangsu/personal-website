@@ -219,7 +219,7 @@ function getIntro() {
 
 function sendComment() {
     $('#comment-send').on('click', function () {
-        $.post("./data/comment.php",
+        $.post("./php/comment.php",
             {
                 "comment-name": $('#comment-name').val(),
                 "comment-email": $('#comment-email').val(),

@@ -11,9 +11,10 @@ $(document).ready(function () {
     // if ajax failed, the music player function cannot click.
     $.ajax({
         "type": "POST",
-        "url": './data/music.json',
+        "url": './php/readData.php',
+        "data": 'data=music',
         'success': function (data) {
-            myPlayer = new MusicPlayer(data);
+            myPlayer = new MusicPlayer(JSON.parse(data));
             enableMusicPlayerFunctions();
         }
     });

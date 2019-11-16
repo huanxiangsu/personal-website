@@ -6,7 +6,7 @@
     if (empty($name) || empty($email)) {
         echo "Failed! Name and Email are Required!";
     } else {
-        $file = fopen("commentInfo.txt", 'a') or die("Cannot open the file!");
+        $file = fopen("../data/commentInfo.txt", 'a') or die("Cannot open the file!");
         fwrite($file, "Name: $name  -- Email: $email\n");
         fwrite($file, "Comment: $comment\n\n");
         fclose($file);

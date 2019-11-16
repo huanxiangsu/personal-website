@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Frupal",
+        "description": "A cool adventure game!",
+        "img": "./images/frupal1.png",
+        "detail_link": "https://github.com/huanxiangsu/Frupal",
+        "demo_link": "http://web.cecs.pdx.edu/~huanxsu/Frupal/"
+    },
+
+    {
+        "title": "SIFT",
+        "description": "Scale-Invariant Feature Transform Algorithm for image feature detection",
+        "img": "./images/sift.png",
+        "detail_link": "https://github.com/huanxiangsu/my-sift",
+        "demo_link": null
+    }
+]
