@@ -24,21 +24,21 @@
     {
         "title": "Wildest Dreams",
         "artist": "Taylor Swift",
-        "img": "#",
+        "img": "./images/c1.jpg",
         "file": "./music/Taylor_Swift_-_Wildest_Dreams.mp3",
         "howl": null
     },
     {
         "title": "Enchanted",
         "artist": "Taylor Swift",
-        "img": "#",
+        "img": "./images/c2.jpg",
         "file": "./music/Taylor Swift - Enchanted.mp3",
         "howl": null
     },
     {
         "title": "Blank Space",
         "artist": "Taylor Swift",
-        "img": "#",
+        "img": "./images/c3.jpg",
         "file": "./music/Taylor Swift - Blank Space.mp3",
         "howl": null
     }

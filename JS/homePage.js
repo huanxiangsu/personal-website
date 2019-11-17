@@ -176,15 +176,16 @@ function getResume() {
         if ($('#resume-block').text() == "") {
             $.ajax({
                 "type": "POST",
-                "url": './data/resume.html',
+                "url": './php/readData.php',
+                "data": "data=resume",
                 'success': function (data) {
                     $('#resume-block').append(data);
                 },
                 "error": function (xhr, status, error) {
                     if (xhr.status == '404') {
-                        $('#resume-block').append("<h2 class='fail-text'>Resume File Not Found!</h2>");
+                        $('#resume-block').append("<h2 class='ajax-fail-text'>Resume File Not Found!</h2>");
                     } else {
-                        $('#resume-block').append("<h2 class='fail-text'>Failed to Load Resume!</h2>");
+                        $('#resume-block').append("<h2 class='ajax-fail-text'>Failed to Load Resume!</h2>");
                     }
                 }
             });
@@ -285,7 +286,7 @@ function autoScrollTab() {
         }
     });
 
-    $('#gallary-tab-a').on('shown.bs.tab', function (event) {
+    $('#gallery-tab-a').on('shown.bs.tab', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
@@ -357,6 +358,7 @@ function homeScroll() {
         var previousBottom = $('.home-row').eq(i - 1).height() + offTop;
         if (offTop > 0) {
             if (pageBottom - previousBottom >= 130) {
+                // $('.home-row').eq(i).show();
                 $('.home-row').eq(i).show();
             }
         } else {
@@ -364,6 +366,8 @@ function homeScroll() {
         }     
     }
 }
+
+
 
 
 // $(document).on('click', function (event) {

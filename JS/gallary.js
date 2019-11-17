@@ -6,6 +6,10 @@ var custom_view_changed = false;
 var global_view2 = false;
 
 $(document).ready(function () {
+    $('#gallery-tab-a').on('shown.bs.tab', galleryInitialization);
+});
+
+function galleryInitialization() {
     $.ajax({
         "type": "POST",
         "url": './php/readData.php',
@@ -17,9 +21,13 @@ $(document).ready(function () {
         },
         "error": function (xhr, status, error) {
             console.log("Error: " + xhr.status);
+            $('.gallary').css('height', '300px');
+            $('.gallary').append('<h2 class="ajax-fail-text">Failed to Load Gallery!</h2>');
         }
     });
-});
+    $('#gallery-tab-a').off('shown.bs.tab', galleryInitialization);
+    
+}
 
 
 function setupGallary(imgList) {

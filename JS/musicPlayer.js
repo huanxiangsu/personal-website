@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 function basicSetupMusicPlayer() {
     openPlayList();
-    changeBg();
+    autoChangeBackground();
 }
 
 
@@ -138,6 +138,12 @@ MusicPlayer.prototype = {
         setActive(index + 1);
         $('.music-name-title').text( (index+1) + '. ' + song_data.title);
         $('.music-name-artist').text(song_data.artist);
+        if (song_data.img !== '#') {
+            $('.music-img').css('background-image', "url('" + song_data.img + "')");
+        } else {
+            $('.music-img').css('background-image', "url('./images/default_music.png')");
+        }
+        
 
         // Show the pause button.
         if (sound.state() === 'loaded') {
@@ -443,6 +449,9 @@ function refreshMusicImg() {
 
 
 var bgIndex = 0;
+var autoChangeBg = false;
+var autoChangeIn;
+
 function changeBg() {
     if (bgIndex == 0) {
         $('.music-player').css('background-color', 'rgba(73, 74, 78, 0.4)');
@@ -474,5 +483,15 @@ function changeBg() {
         bgIndex = 0;
     }
 }
-window.setInterval(changeBg, 6000);
+
+function autoChangeBackground() {
+    $('#music-tab-a').on('shown.bs.tab', function (event) {
+        autoChangeIn = setInterval(changeBg, 6000);
+    });
+
+    $('#music-tab-a').on('hidden.bs.tab', function () {
+        clearInterval(autoChangeIn);
+    });
+}
+// window.setInterval(changeBg, 6000);
 
