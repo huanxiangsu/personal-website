@@ -26,16 +26,16 @@ $(document).ready(function () {
     window.setInterval(updateCurrentTime, 1000);
 
     // add event listeners
-    displayAboutMe();
-    getProjects();
-    displayProjects();
-    displayCalender();
+    sidebar_displayAboutMe();
+    sidebar_displayProjects();
+    sidebar_displayCalender();
     displayHomeImgInImgModal();
     getResume();
     // getIntro();
     sendComment();
     autoScrollTab();
     homeScrollEffect();
+    projectInitialization();
 });
 
 
@@ -75,7 +75,7 @@ function getProjects() {
 }
 
 
-function displayProjects() {
+function sidebar_displayProjects() {
     $('#side-project-id').on('click', function (event) {
         $('#myNav>li, .dropdown-menu>li').removeClass('active');
         $('.dropdown, #project-tab').addClass('active');
@@ -98,7 +98,7 @@ function displayProjects() {
 }
 
 
-function displayAboutMe() {
+function sidebar_displayAboutMe() {
     $('#side-about-id').on('click', function (event) {
         $('#myNav>li, .dropdown-menu>li').removeClass('active');
         $('#about-tab').addClass('active');
@@ -125,7 +125,7 @@ function updateCurrentTime() {
 }
 
 
-function displayCalender() {
+function sidebar_displayCalender() {
     $('#side-calender-id').on('click', function (event) {
         $('#myNav>li, .dropdown-menu>li').removeClass('active');
         if (!calender_site) {
@@ -323,8 +323,8 @@ function autoScrollTab() {
     });
 }
 
-var homeScrollFlag = true;
 
+var homeScrollFlag = true;
 function homeScrollEffect() {
     homeScroll();
     $('#home-tab-a').on('shown.bs.tab', function (event) {
@@ -365,6 +365,76 @@ function homeScroll() {
             break;
         }     
     }
+}
+
+function projectInitialization() {
+    // $('#project-tab-a').on('shown.bs.tab', loadProjectContent);
+    loadProjectContent();
+}
+
+function loadProjectContent() {
+    $.ajax({
+        "type": "POST",
+        "url": './php/readData.php',
+        "data": 'data=project',
+        'success': function (data) {
+            setupProjectContent(JSON.parse(data));
+            getProjects();
+        },
+        "error": function (xhr, status, error) {
+            console.log("Project site Error: " + xhr.status);
+        }
+    });
+    // $('#project-tab-a').off('shown.bs.tab', loadProjectContent);
+}
+
+function setupProjectContent(projectList) {
+    var numRows = Math.ceil(projectList.length / 3);
+    var numLastRow = projectList.length % 3;
+    var index;
+    for (var i = 0; i < numRows; ++i) {
+        a_row = '<div class="row">\r';
+        for (var j = 0; j < 3; ++j) {
+            index = i * 3 + j;
+            if (index === projectList.length) {
+                break;
+            }
+            cur = projectList[index];
+
+            a_row += '<div class="col-sm-4">';
+            a_row += '<div class="project-block">';
+            a_row += '<div class="project-img">';
+            if (cur.demo_link) {
+                a_row += '<a href="' + cur.demo_link + '" target="_blank">';
+            } else {
+                a_row += '<a>';
+            }
+            a_row += '<img class="myimg img-responsive zoom-effect" src="' + cur.img + '">';
+            a_row += '</a></div>';
+
+            a_row += '<div class="project-body">';
+            a_row += '<h3 class="project-body-title">' + cur.title + '</h3>';
+            a_row += '<p class="project-body-content">' + cur.description + '</p>';
+            
+            a_row += '<div class="project-body-footer">';
+            if (cur.detail_link) {
+                a_row += '<a class="project-body-footer-detail" href="' + cur.detail_link + '" target="_blank"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>\r';
+            } else {
+                a_row += '<a class = "project-body-footer-detail" data-toggle="popover" title="No Detail" data-content="Detail not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>';
+            }
+            if (cur.demo_link != null) {
+                a_row += '<a class="project-body-footer-demo" href="' + cur.demo_link + '" target="_blank"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+            } else {
+                a_row += '<a class="project-body-footer-demo" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+            }
+            a_row += '</div></div></div></div>';
+        }
+        a_row += '</div>';
+        $('#myProject').append(a_row);
+    }
+
+    $('[data-toggle="popover"').popover();
+
 }
 
 

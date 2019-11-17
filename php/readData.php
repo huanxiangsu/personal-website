@@ -18,5 +18,11 @@
         $data = fread($my_file, filesize("../data/resume.html"));
         fclose($my_file);
         echo $data;
+
+    } else if ($dataset == 'project') {
+        $my_file = fopen("../data/project.json", 'r') or die("cannot open the file!");
+        $data = fread($my_file, filesize("../data/project.json"));
+        fclose($my_file);
+        echo $data;
     }
 ?>

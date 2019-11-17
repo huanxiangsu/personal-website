@@ -86,7 +86,7 @@ MusicPlayer.prototype = {
                 preload: false,
 
                 onplay: function () {
-                    console.log('playing ' + song_data.title + ' ...');
+                    // console.log('playing ' + song_data.title + ' ...');
                     // Display the duration.
                     $('#total-minute').text(formatDuration(Math.round(sound.duration())));
                     
@@ -96,35 +96,35 @@ MusicPlayer.prototype = {
                 },
 
                 onplayerror: function () {
-                    console.log('Cannot play ' + song_data.title + ' ...');
+                    // console.log('Cannot play ' + song_data.title + ' ...');
                 },
 
                 onload: function () {
-                    console.log('loading ' + song_data.title + ' ...');
+                    // console.log('loading ' + song_data.title + ' ...');
                 },
 
                 onloaderror: function () {
-                    console.log('Cannot load ' + song_data.title + ' ...');
+                    // console.log('Cannot load ' + song_data.title + ' ...');
                 },
 
                 
 
                 onend: function () {
-                    console.log('ending ' + song_data.title + ' ...');
+                    // console.log('ending ' + song_data.title + ' ...');
                     // play next song when ended
                     self.skip('next');
                 },
 
                 onpause: function () {
-                    console.log('pausing ' + song_data.title + ' ...');
+                    // console.log('pausing ' + song_data.title + ' ...');
                 },
 
                 onstop: function () {
-                    console.log('stopped ' + song_data.title + ' ...');
+                    // console.log('stopped ' + song_data.title + ' ...');
                 },
 
                 onseek: function () {
-                    console.log('seeking ' + song_data.title + ' ...');
+                    // console.log('seeking ' + song_data.title + ' ...');
                     // Start upating the progress of the track.
                     // requestAnimationFrame(self.step.bind(self));
                 }
@@ -147,7 +147,7 @@ MusicPlayer.prototype = {
 
         // Show the pause button.
         if (sound.state() === 'loaded') {
-            console.log(song_data.title + ' == loaded');
+            // console.log(song_data.title + ' == loaded');
         } else {
         }
 
