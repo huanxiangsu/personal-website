@@ -519,6 +519,7 @@
     height: 300px;
     width: 300px;
     margin: 10px auto;
+    border: 5px solid rgb(129, 124, 124);
 }
 
 .music-center-circle {
@@ -604,7 +605,7 @@
 
 .spin-effect {
     animation-name: spin;
-    animation-duration: 8s;
+    animation-duration: 16s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-play-state: paused;
@@ -622,7 +623,7 @@
 .music-control-bars {
     position: absolute;
     width: 100%;
-    margin: 40px 0;
+    margin: 25px 0 20px;
     height: 40px;
 
 }
@@ -718,8 +719,8 @@
     position: absolute;
     display: none;
     width: 380px;
-    height: 405px;
-    bottom: 95px;
+    height: 390px;
+    bottom: 108px;
     left: 50%;
     margin: 0 -190px;
     background-color: rgba(73, 74, 78, 0.7);
@@ -753,20 +754,38 @@
 }
 
 .playlist-song-number {
-    margin-top: 15px;
+    margin-top: 12px;
     color: rgba(230, 229, 229, 0.65);
     transition: color 0.3s;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.playlist-song-img {
+    display: none;
+    background-image: url('../images/default_music.png');
+    background-size: 100% 100%;
+    height: 35px;
+    width: 35px;
+    margin: 3px 7px 3px 5px;
+    float: left;
+
+}
+
+.playlist-song-text {
+
 }
 
 .playlist-song-title {
-    font-size: 21px;
+    font-size: 18px;
     color: rgba(230, 229, 229, 0.65);
     font-weight: 430;
     transition: color 0.3s;
 }
 
 .playlist-song-artist {
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(230, 229, 229, 0.45);
     transition: color 0.3s;
 }
@@ -793,10 +812,10 @@
 .playlist-block>.active>.playlist-song>.playlist-song-number {
     color: rgba(255, 252, 252, 1);
 }
-.playlist-block>.active>.playlist-song>.col-sm-11>.playlist-song-title {
+.playlist-block>.active>.playlist-song>.playlist-song-text>.playlist-song-title {
     color: rgba(255, 252, 252, 1);
 }
-.playlist-block>.active>.playlist-song>.col-sm-11>.playlist-song-artist {
+.playlist-block>.active>.playlist-song>.playlist-song-text>.playlist-song-artist {
     color: rgba(255, 252, 252, 1);
 }
 

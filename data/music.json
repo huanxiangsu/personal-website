@@ -31,15 +31,29 @@
     {
         "title": "Enchanted",
         "artist": "Taylor Swift",
-        "img": "./images/c2.jpg",
+        "img": "./images/p6.jpg",
         "file": "./music/Taylor Swift - Enchanted.mp3",
         "howl": null
     },
     {
         "title": "Blank Space",
         "artist": "Taylor Swift",
-        "img": "./images/c3.jpg",
+        "img": "./images/c4.jpg",
         "file": "./music/Taylor Swift - Blank Space.mp3",
+        "howl": null
+    },
+    {
+        "title": "满足",
+        "artist": "肖战",
+        "img": "./images/song2.png",
+        "file": "./music/肖战 - 满足.mp3",
+        "howl": null
+    },
+    {
+        "title": "鸟语林",
+        "artist": "双笙",
+        "img": "./images/song1.png",
+        "file": "./music/双笙 - 鸟语林.mp3",
         "howl": null
     }
 ]

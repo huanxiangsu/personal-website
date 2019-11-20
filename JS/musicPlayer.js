@@ -42,13 +42,25 @@ function MusicPlayer(playlist) {
         // setup playlist
         for (var i = 0; i < this.playlist.length; ++i) {
             var div;
+            // div = '<div class="playlist-song-block">';
+            //     div += '<div class="row playlist-song">';
+            //         div += '<div class="col-sm-1 playlist-song-number">' + (i + 1) + '</div>';
+            //         // div += '<div class="col-sm-1 img-circle playlist-song-img"></div>';
+            //         div += '<div class="col-sm-11 playlist-song-text">';
+            //             div += '<div class="playlist-song-title">' + this.playlist[i].title + '</div>';
+            //             div += '<div class="playlist-song-artist">' + this.playlist[i].artist + '</div>';
+            //         div += '</div>';
+            //     div += '</div>';
+            // div += '</div>';
+
             div = '<div class="playlist-song-block">';
-            div += '<div class="row playlist-song">';
-            div += '<div class="col-sm-1 playlist-song-number">' + (i + 1) + '</div>';
-            div += '<div class="col-sm-11">';
+            div += '<div class="playlist-song">';
+            div += '<span class="playlist-song-number">' + (i + 1) + '</span>';
+            div += '<div class="img-circle playlist-song-img"></div>';
+            div += '<span class="playlist-song-text">';
             div += '<div class="playlist-song-title">' + this.playlist[i].title + '</div>';
             div += '<div class="playlist-song-artist">' + this.playlist[i].artist + '</div>';
-            div += '</div>';
+            div += '</span>';
             div += '</div>';
             div += '</div>';
 
@@ -134,14 +146,16 @@ MusicPlayer.prototype = {
         // Begin playing the sound.
         sound.play();
 
-        // Update the track display.
+        // Update the track display: title, artist, image
         setActive(index + 1);
         $('.music-name-title').text( (index+1) + '. ' + song_data.title);
         $('.music-name-artist').text(song_data.artist);
         if (song_data.img !== '#') {
             $('.music-img').css('background-image', "url('" + song_data.img + "')");
+            showPlaylistImg(index + 1, song_data.img);
         } else {
             $('.music-img').css('background-image', "url('./images/default_music.png')");
+            showPlaylistImg(index + 1, './images/default_music.png');
         }
         
 
@@ -231,6 +245,9 @@ MusicPlayer.prototype = {
         $('#current-minute').text('0:00');
         $('#total-minute').text('0:00');
 
+        // hide image and show number in the playlist.
+        hidePlaylistImg(self.index + 1);
+
         // Play the new track.
         self.play(index);
     },
@@ -256,7 +273,8 @@ MusicPlayer.prototype = {
     },
 
     /**
-     * get the time when moving the slider btn in progress bar.
+     * get the time when moving the slider btn in progress bar,
+     * and update the current time in the interface.
      * @param {Number} percent Percentage through the song to skip.
      */
     getMovingSeek: function (percent) {
@@ -399,13 +417,24 @@ function formatDuration(duration) {
 
 function openPlayList() {
     $('#list-btn').on('click', function () {
-        $('.playlist-block').slideToggle(500);
+        $('.playlist-block').slideToggle(350);
     });
 }
 
 function setActive(index) {
     $('.playlist-block').children().removeClass('active');
     $('.playlist-block').children().eq(index).addClass('active');
+}
+
+function showPlaylistImg(index, img) {
+    $('.playlist-block').children().eq(index).children().eq(0).children('.playlist-song-img').css('background-image', "url('" + img + "')");
+    $('.playlist-block').children().eq(index).children().eq(0).children('.playlist-song-img').show();
+    $('.playlist-block').children().eq(index).children().eq(0).children('.playlist-song-number').hide();
+}
+
+function hidePlaylistImg(index) {
+    $('.playlist-block').children().eq(index).children().eq(0).children('.playlist-song-img').hide();
+    $('.playlist-block').children().eq(index).children().eq(0).children('.playlist-song-number').show();
 }
 
 
