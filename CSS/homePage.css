@@ -1,3 +1,7 @@
+#main {
+    display: none;
+}
+
 /******************************* Background ****************************/
 .bg {
     background-image: url('../images/s5.jpeg');

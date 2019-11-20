@@ -1,27 +1,15 @@
 var calender_site = false;
 
 $(document).ready(function () {
+    $('#main').fadeIn(1500);
+
     window.onscroll = function () {
-        scroll();
+        scrollTopBtnfading();
     };
+
     scrollToTop();
-
-    $("#to-contact").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 600, function () {
-                window.location.hash = hash;
-            });
-        }
-    });
-
-    $('[data-toggle="popover"').popover();
-
-
+    scrollToContact();
+    
     // update current time every second
     window.setInterval(updateCurrentTime, 1000);
 
@@ -154,7 +142,7 @@ function sidebar_displayCalender() {
 }
 
 
-function scroll() {
+function scrollTopBtnfading() {
     if ($(document).scrollTop() > 100) {
         $('#scroll-top').fadeIn(1300);
     } else {
@@ -167,6 +155,22 @@ function scrollToTop() {
         $("html, body").animate({
             scrollTop: 0
         }, "slow");
+    });
+}
+
+
+function scrollToContact() {
+    $("#to-contact").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 600, function () {
+                window.location.hash = hash;
+            });
+        }
     });
 }
 
