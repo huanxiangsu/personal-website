@@ -5,6 +5,7 @@ var bar_min = 0;
 var bar_max = 356.391;
 var is_moving = false;  // is mouse moving over progress bar
 var myPlayer;
+var updateMusicProgress;
 
 $(document).ready(function () {
     // only setup the music player when entered music site
@@ -39,6 +40,7 @@ function MusicPlayer(playlist) {
     this.sequence = true;
     this.random = false;
     this.single = false;
+    this.update = this.updateAnimation.bind(this);
 
     if (playlist !== undefined) {
         $('#songs-Length').text(this.playlist.length);
@@ -86,8 +88,8 @@ MusicPlayer.prototype = {
         var self = this;
         var sound;
 
-        index = typeof index === 'number' ? index : this.index;
-        var song_data = this.playlist[index];
+        index = typeof index === 'number' ? index : self.index;
+        var song_data = self.playlist[index];
 
         // If we already loaded this track, use the current one.
         // Otherwise, setup and load a new Howl.
@@ -107,9 +109,9 @@ MusicPlayer.prototype = {
                     $('#total-minute').text(formatDuration(Math.round(sound.duration())));
                     
                     // Start upating the progress of the track.
-                    requestAnimationFrame(self.step.bind(self));
-
-                    // this.updateProgress = setInterval(self.step.bind(self), 500);
+                    updateMusicProgress = requestAnimationFrame(self.update);
+                    
+                    // this.updateProgress = setInterval(self.step.bind(self), 1000);
                     
                 },
 
@@ -131,14 +133,17 @@ MusicPlayer.prototype = {
                     // console.log('ending ' + song_data.title + ' ...');
                     // play next song when ended
                     // clearInterval(this.updateProgress);
+                    self.cancelAnimation();
                     self.skip('next');
                 },
 
                 onpause: function () {
+                    self.cancelAnimation();
                     // console.log('pausing ' + song_data.title + ' ...');
                 },
 
                 onstop: function () {
+                    self.cancelAnimation();
                     // clearInterval(this.updateProgress);
                     // console.log('stopped ' + song_data.title + ' ...');
                 },
@@ -156,7 +161,7 @@ MusicPlayer.prototype = {
 
         // Update the track display: title, artist, image
         setActive(index + 1);
-        $('.music-name-title').text( (index+1) + '. ' + song_data.title);
+        $('.music-name-title').text((index + 1) + '. ' + song_data.title);
         $('.music-name-artist').text(song_data.artist);
         if (song_data.img !== '#') {
             $('.music-img').css('background-image', "url('" + song_data.img + "')");
@@ -165,16 +170,14 @@ MusicPlayer.prototype = {
             $('.music-img').css('background-image', "url('./images/default_music.png')");
             showPlaylistImg(index + 1, './images/default_music.png');
         }
-        
 
         // Show the pause button.
         if (sound.state() === 'loaded') {
             // console.log(song_data.title + ' == loaded');
-        } else {
         }
 
         // Keep track of the index we are currently playing.
-        this.index = index;
+        self.index = index;
     },
 
 
@@ -183,7 +186,8 @@ MusicPlayer.prototype = {
      */
     pause: function () {
         // Get the Howl we want to manipulate.
-        var sound = this.playlist[this.index].howl;
+        var self = this;
+        var sound = self.playlist[self.index].howl;
 
         // Puase the sound.
         sound.pause();
@@ -216,13 +220,13 @@ MusicPlayer.prototype = {
         } else {
             // sequence playing
             if (direction === 'prev') {
-                index = this.index - 1;
+                index = self.index - 1;
                 if (index < 0) {
-                    index = this.playlist.length - 1;
+                    index = self.playlist.length - 1;
                 }
             } else {
-                index = this.index + 1;
-                if (index >= this.playlist.length) {
+                index = self.index + 1;
+                if (index >= self.playlist.length) {
                     index = 0;
                 }
             }
@@ -239,11 +243,11 @@ MusicPlayer.prototype = {
         var self = this;
 
         // Stop the current track.
-        if (this.playlist[this.index].howl) {
-            if (!this.playlist[this.index].howl.playing() ) {
+        if (self.playlist[self.index].howl) {
+            if (!self.playlist[self.index].howl.playing() ) {
                 playMusicBtn();
             }
-            this.playlist[this.index].howl.stop();
+            self.playlist[self.index].howl.stop();
         } else {
             // first time playing
             playMusicBtn();
@@ -256,6 +260,9 @@ MusicPlayer.prototype = {
         // hide image and show number in the playlist.
         hidePlaylistImg(self.index + 1);
 
+        // cancel animation before play next
+        self.cancelAnimation();
+        
         // Play the new track.
         self.play(index);
     },
@@ -275,9 +282,12 @@ MusicPlayer.prototype = {
      * @param  {Number} percent Percentage through the song to skip.
      */
     seek: function (percent) {
-        var sound = this.playlist[this.index].howl;
+        var self = this;
+        var sound = self.playlist[self.index].howl;
         // Convert the percent into a seek position.
         sound.seek(sound.duration() * percent);
+        // self.cancelAnimation();
+        self.step();
     },
 
     /**
@@ -297,9 +307,9 @@ MusicPlayer.prototype = {
      */
     step: function () {
         // Get the Howl we want to manipulate.
-        var sound = this.playlist[this.index].howl;
         var self = this;
-
+        var sound = self.playlist[self.index].howl;
+        
         // Determine our current seek position.
         var seek = sound.seek() || 0;
         var percent = seek / sound.duration();
@@ -311,7 +321,20 @@ MusicPlayer.prototype = {
         }
 
         // If the sound is still playing, continue stepping.
-        requestAnimationFrame(self.step.bind(self));
+        // updateMusicProgress = requestAnimationFrame(self.update);
+    },
+
+    cancelAnimation: function () {
+        if (updateMusicProgress) {
+            window.cancelAnimationFrame(updateMusicProgress);
+        }
+    },
+
+    updateAnimation: function () {
+        var self = this;
+        self.step();
+        // If the sound is still playing, continue stepping.
+        updateMusicProgress = requestAnimationFrame(self.update);
     }
 };
 
@@ -353,6 +376,7 @@ function enableMusicPlayerFunctions() {
         var bar_width = event.pageX - $(this).offset().left;
         var percent = bar_width / bar_max;
         myPlayer.seek(percent);
+        // updateProgressBar(percent);
     });
 
     $('#slider-btn').on('mousedown', function (event) {
