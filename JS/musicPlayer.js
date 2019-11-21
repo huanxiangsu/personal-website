@@ -7,7 +7,15 @@ var is_moving = false;  // is mouse moving over progress bar
 var myPlayer;
 
 $(document).ready(function () {
-    // setup playlist and enable all functionality
+    // only setup the music player when entered music site
+    $('#music-tab-a').on('shown.bs.tab', mainSetupMusicPlayer);
+});
+
+
+function mainSetupMusicPlayer() {
+    $('#music-tab-a').off('shown.bs.tab', mainSetupMusicPlayer);
+
+    // setup playlist and enable all functionalities
     // if ajax failed, the music player function cannot click.
     $.ajax({
         "type": "POST",
@@ -18,13 +26,9 @@ $(document).ready(function () {
             enableMusicPlayerFunctions();
         }
     });
-    basicSetupMusicPlayer();
-});
 
-
-function basicSetupMusicPlayer() {
     openPlayList();
-    autoChangeBackground();
+    autoChangeBackground(); 
 }
 
 
@@ -104,6 +108,8 @@ MusicPlayer.prototype = {
                     
                     // Start upating the progress of the track.
                     requestAnimationFrame(self.step.bind(self));
+
+                    // this.updateProgress = setInterval(self.step.bind(self), 500);
                     
                 },
 
@@ -124,6 +130,7 @@ MusicPlayer.prototype = {
                 onend: function () {
                     // console.log('ending ' + song_data.title + ' ...');
                     // play next song when ended
+                    // clearInterval(this.updateProgress);
                     self.skip('next');
                 },
 
@@ -132,6 +139,7 @@ MusicPlayer.prototype = {
                 },
 
                 onstop: function () {
+                    // clearInterval(this.updateProgress);
                     // console.log('stopped ' + song_data.title + ' ...');
                 },
 
@@ -304,10 +312,8 @@ MusicPlayer.prototype = {
 
         // If the sound is still playing, continue stepping.
         requestAnimationFrame(self.step.bind(self));
-    },
-
+    }
 };
-
 
 
 function enableMusicPlayerFunctions() {
@@ -351,21 +357,23 @@ function enableMusicPlayerFunctions() {
 
     $('#slider-btn').on('mousedown', function (event) {
         is_moving = true;
+        $('*').on('mouseup', globalMoving);
     });
 
-    $('#slider-btn').on('mouseup', function (event) {
-        if (is_moving) {
-            is_moving = false;
-            myPlayer.seek(percent_moving);
-        } 
-    });
+    // $('#slider-btn').on('mouseup', function (event) {
+    //     if (is_moving) {
+    //         is_moving = false;
+    //         myPlayer.seek(percent_moving);
+    //     } 
+    // });
 
-    $('*').on('mouseup', function () {
+    function globalMoving() {
         if (is_moving) {
             is_moving = false;
             myPlayer.seek(percent_moving);
         }
-    });
+        $('*').off('mouseup', globalMoving);
+    }
 
     $('#myMusic').on('mousemove', function (event) {
         if (is_moving) {
@@ -477,31 +485,36 @@ function refreshMusicImg() {
 }
 
 
-var bgIndex = 0;
+var bgIndex = 1;
 var autoChangeBg = false;
 var autoChangeIn;
 
 function changeBg() {
     if (bgIndex == 0) {
+        // gray
         $('.music-player').css('background-color', 'rgba(73, 74, 78, 0.4)');
         $('#bar-moving').css('background-color', 'rgba(241, 235, 237, 0.9)');
         $('.btn-music').css('background-color', 'rgba(73, 74, 78, 0.5)');
 
     } else if (bgIndex == 1) {
+        // blue
         $('.music-player').css('background-color', 'rgba(45, 66, 216, 0.4)');
         $('#bar-moving').css('background-color', 'rgba(4, 33, 243, 0.9)');
         $('.btn-music').css('background-color', 'rgba(45, 66, 216, 0.4)');
 
     } else if (bgIndex == 2) {
+        // red
         $('.music-player').css('background-color', 'rgba(230, 22, 65, 0.4)');
         $('#bar-moving').css('background-color', 'rgba(245, 10, 10, 0.9)');
         $('.btn-music').css('background-color', 'rgba(230, 22, 65, 0.4)');
 
     } else if (bgIndex == 3) {
+        // green
         $('.music-player').css('background-color', 'rgba(63, 150, 146, 0.4)');
         $('#bar-moving').css('background-color', 'rgba(41, 222, 214, 0.9)');
         $('.btn-music').css('background-color', 'rgba(63, 150, 146, 0.4)');
     } else {
+        // purple
         $('.music-player').css('background-color', 'rgba(191, 34, 202, 0.4)');
         $('#bar-moving').css('background-color', 'rgba(222, 12, 236, 0.9)');
         $('.btn-music').css('background-color', 'rgba(191, 34, 202, 0.4)');
@@ -514,10 +527,13 @@ function changeBg() {
 }
 
 function autoChangeBackground() {
+    // first time, execute once
+    autoChangeIn = setInterval(changeBg, 6000);
+    // add auto change every time the page is shown
     $('#music-tab-a').on('shown.bs.tab', function (event) {
         autoChangeIn = setInterval(changeBg, 6000);
     });
-
+    // remove auto change when leave the page
     $('#music-tab-a').on('hidden.bs.tab', function () {
         clearInterval(autoChangeIn);
     });

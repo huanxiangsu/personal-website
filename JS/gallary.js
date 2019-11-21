@@ -6,10 +6,10 @@ var custom_view_changed = false;
 var global_view2 = false;
 
 $(document).ready(function () {
-    $('#gallery-tab-a').on('shown.bs.tab', galleryInitialization);
+    $('#gallery-tab-a').on('shown.bs.tab', mainSetupGallery);
 });
 
-function galleryInitialization() {
+function mainSetupGallery() {
     $.ajax({
         "type": "POST",
         "url": './php/readData.php',
@@ -25,7 +25,7 @@ function galleryInitialization() {
             $('.gallary').append('<h2 class="ajax-fail-text">Failed to Load Gallery!</h2>');
         }
     });
-    $('#gallery-tab-a').off('shown.bs.tab', galleryInitialization);
+    $('#gallery-tab-a').off('shown.bs.tab', mainSetupGallery);
     
 }
 
