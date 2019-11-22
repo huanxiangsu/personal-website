@@ -255,12 +255,15 @@ function sendComment() {
 
 function displayHomeImgInImgModal() {
     $('.home-img').on('click', function () {
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-out');
         var src = $(this).attr('src');
         var alt = $(this).attr('alt');
         $('#modal-img').attr('src', src);
         $('#modal-img').attr('alt', alt);
         $('#modal-img-caption').text(alt);
         $('#gallary-img-modal').modal();
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(1)' });
+        $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-in');
     });
 }
 

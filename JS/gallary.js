@@ -7,6 +7,7 @@ var global_view2 = false;
 
 $(document).ready(function () {
     $('#gallery-tab-a').on('shown.bs.tab', mainSetupGallery);
+    displayGlobalModal();
 });
 
 function mainSetupGallery() {
@@ -17,7 +18,7 @@ function mainSetupGallery() {
         'success': function (data) {
             setupGallary(JSON.parse(data));
             changeGallaryView();
-            displayImgModal();
+            displayModalInGallery();
         },
         "error": function (xhr, status, error) {
             console.log("Error: " + xhr.status);
@@ -151,7 +152,7 @@ function view13To2() {
 }
 
 
-function displayImgModal() {
+function displayModalInGallery() {
     $('.gallary-img').on('click', function () {
         var img = $(this).find('img').eq(0);
         var src = img.attr('src');
@@ -161,8 +162,30 @@ function displayImgModal() {
             $('#modal-img').attr('alt', alt);
             $('#modal-img-caption').text(alt);
             $('#gallary-img-modal').modal();
+            // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(1)' });
+            $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-in');
         } else {
             console.log('Error! Cannot find image source!');
         }
     });
+}
+
+function displayGlobalModal() {
+    $('.modal-close-btn').on('click', function () {
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(0)' });
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-in');
+        $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-out');
+        setTimeout(function () {
+            $('#gallary-img-modal').modal('hide');
+        }, 700);
+    });
+
+    $('#gallary-img-modal').on('shown.bs.modal', function () {
+        $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-in');
+    });
+
+    $('#gallary-img-modal').on('hidden.bs.modal', function () {
+        $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-out');
+    });
+    
 }

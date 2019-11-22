@@ -456,6 +456,8 @@
 
 .modal-img {
     margin: auto;
+    /* transform: scale(0);
+    transition: 0.75s ease; */
 }
 
 .modal-close {
@@ -468,6 +470,8 @@
     font-size: 70px;
     color: #FFF;
     opacity: 0.7;
+    /* transform: scale(0);
+    transition: transform 0.75s ease, color 0.4s ease; */
 }
 
 #modal-img-caption {
@@ -475,16 +479,35 @@
     text-align: center;
     color: #FFF;
     padding: 15px 0px;
+    /* transform: scale(0);
+    transition: 0.75s ease; */
 }
 
-.modal-img, #modal-img-caption, .modal-close-btn {
-    animation-name: zoom-in-effect;
-    animation-duration: 0.8s;
+.modal-zoom-in {
+    animation-name: modal-zoom-in-effect;
+    animation-duration: 0.75s;
+}
+.modal-zoom-out {
+    animation-name: modal-zoom-out-effect;
+    animation-duration: 0.75s;
 }
 
-@keyframes zoom-in-effect {
+@keyframes modal-zoom-in-effect {
     from {transform:scale(0)}
     to {transform: scale(1)}
+}
+@-webkit-keyframes modal-zoom-in-effect {
+    from {transform:scale(0)}
+    to {transform: scale(1)}
+}
+
+@keyframes modal-zoom-out-effect {
+    from {transform:scale(1)}
+    to {transform: scale(0)}
+}
+@-webkit-keyframes modal-zoom-out-effect {
+    from {transform:scale(1)}
+    to {transform: scale(0)}
 }
 
 /*----------------------------- music site --------------------------------------*/
@@ -865,11 +888,14 @@
 
 .project-body-footer {
     margin-bottom: 5px;
-    word-spacing: 25px;
 }
 
 .project-body-footer a button{
     margin-bottom: 7px;
+}
+
+.project-body-footer-detail {
+    margin-right: 15px;
 }
 
 .popover {
