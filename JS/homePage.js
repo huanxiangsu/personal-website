@@ -1,7 +1,7 @@
 var calender_site = false;
 
 $(document).ready(function () {
-    $('#main').fadeIn(1500);
+    $('#main').fadeIn(1650);
 
     window.onscroll = function () {
         scrollTopBtnfading();

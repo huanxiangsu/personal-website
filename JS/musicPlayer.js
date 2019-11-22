@@ -125,9 +125,7 @@ MusicPlayer.prototype = {
 
                 onloaderror: function () {
                     // console.log('Cannot load ' + song_data.title + ' ...');
-                },
-
-                
+                },    
 
                 onend: function () {
                     // console.log('ending ' + song_data.title + ' ...');
@@ -262,7 +260,7 @@ MusicPlayer.prototype = {
 
         // cancel animation before play next
         self.cancelAnimation();
-        
+
         // Play the new track.
         self.play(index);
     },
@@ -303,7 +301,7 @@ MusicPlayer.prototype = {
     },
 
     /**
-     * The step called within requestAnimationFrame to update the playback position.
+     * The step called to update the playback position.
      */
     step: function () {
         // Get the Howl we want to manipulate.
@@ -319,9 +317,6 @@ MusicPlayer.prototype = {
             $('#current-minute').text(formatDuration(Math.round(seek)));
             updateProgressBar(percent);
         }
-
-        // If the sound is still playing, continue stepping.
-        // updateMusicProgress = requestAnimationFrame(self.update);
     },
 
     cancelAnimation: function () {
@@ -410,7 +405,6 @@ function enableMusicPlayerFunctions() {
                 $('#slider-btn').css('left', slider_width + 'px');
                 myPlayer.getMovingSeek(percent_moving);
             }
-
         }
     });
 
