@@ -17,7 +17,7 @@ $(document).ready(function () {
     sidebar_displayAboutMe();
     sidebar_displayProjects();
     sidebar_displayCalender();
-    displayHomeImgInImgModal();
+    displayGlobalModal();
     getResume();
     // getIntro();
     sendComment();
@@ -253,7 +253,7 @@ function sendComment() {
     });
 }
 
-function displayHomeImgInImgModal() {
+function displayGlobalModal() {
     $('.home-img').on('click', function () {
         // $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-out');
         var src = $(this).attr('src');
@@ -265,7 +265,29 @@ function displayHomeImgInImgModal() {
         // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(1)' });
         $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-in');
     });
+
+    $('.modal-close-btn').on('click', function () {
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(0)' });
+        // $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-in');
+        $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-out');
+        setTimeout(function () {
+            $('#gallary-img-modal').modal('hide');
+        }, 700);
+    });
+
+    $('#gallary-img-modal').on('shown.bs.modal', function () {
+        $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-in');
+    });
+
+    $('#gallary-img-modal').on('hidden.bs.modal', function () {
+        $('.modal-img, #modal-img-caption, .modal-close-btn').removeClass('modal-zoom-out');
+        // reset modal info to prevent slow internet.
+        $('#modal-img').attr('src', '#');
+        $('#modal-img').attr('alt', '#');
+        $('#modal-img-caption').text('#');
+    });
 }
+
 
 function autoScrollTab() {
     $('#about-tab-a').on('shown.bs.tab', function (event) {
@@ -443,8 +465,6 @@ function setupProjectContent(projectList) {
     $('[data-toggle="popover"').popover();
 
 }
-
-
 
 
 // $(document).on('click', function (event) {
