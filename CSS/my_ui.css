@@ -1,0 +1,8 @@
+.ui.uncover.sidebar {
+    z-index: 10;
+}
+
+.ui.image {
+    width: 50px;
+    margin-right: 1em;
+}

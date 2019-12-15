@@ -25,13 +25,36 @@
     <!-- howler: for music-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
     
+    <!-- Semantic UI -->
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
+
     <!-- my source code -->
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
+    <link rel="stylesheet" type="text/css" href="CSS/my_ui.css">
     <script type="text/javascript" src="JS/homePage.js"></script>
+
     
+
     </head>
 
 <body id="main">
+
+<div class="ui sidebar vertical inverted menu left overlay">
+    <div class="item">
+        <a class="ui logo icon image" href="./">
+            <img src="./images/x10.png">
+        </a>
+        <a href="./">
+            <b style="font-size: 20px;">Xiang</b>
+        </a>
+    </div>
+    <a class="item">item1</a>
+    <a class="item">item2</a>
+    <a class="item">item3</a>
+</div>
+
+<div class="pusher">
 
 <div class="container-fluid bg">
     <nav class="navbar navbar-default">
@@ -42,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button> -->
-                <button type="button" class="navbar-toggle">
+                <button type="button" class="navbar-toggle" id="ui-meau">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -461,6 +484,15 @@
     </div>
 </div>
 
+<!-- go to top botton -->
+<div class="scroll-top-block" id="scroll-top">
+    <button class="btn scroll-top-btn" title="Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+
+</div> <!-- end pusher -->
+
 <!--------------------------------------------- gallary modal site -------------------------------------->
 
 <div id="gallary-img-modal" class="modal" role="dialog">
@@ -472,15 +504,6 @@
         <div id="modal-img-caption"></div>
     </div>
 </div>
-
-
-<!-- go to top botton -->
-<div class="scroll-top-block" id="scroll-top">
-    <button class="btn scroll-top-btn" title="Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-</div>
-
 
 <!-- js sources -->
 <script type="text/javascript" src="JS/gallary.js"></script>
