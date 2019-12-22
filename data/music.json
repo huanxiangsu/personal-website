@@ -25,7 +25,7 @@
         "title": "Wildest Dreams",
         "artist": "Taylor Swift",
         "img": "./images/c1.jpg",
-        "file": "./music/Taylor_Swift_-_Wildest_Dreams.mp3",
+        "file": "./music/Taylor Swift - Wildest Dreams.mp3",
         "howl": null
     },
     {
@@ -54,6 +54,13 @@
         "artist": "双笙",
         "img": "./images/song1.png",
         "file": "./music/双笙 - 鸟语林.mp3",
+        "howl": null
+    },
+    {
+        "title": "无羁（特别版）",
+        "artist": "周笔畅",
+        "img": "./images/song3.jpg",
+        "file": "./music/周笔畅 - 无羁.mp3",
         "howl": null
     }
 ]
