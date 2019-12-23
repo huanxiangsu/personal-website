@@ -40,6 +40,21 @@
     border: 0px;
 }
 
+.navbar-toggle {
+    float: left;
+    margin-right: 25px;
+}
+
+@media (min-width: 768px) {
+    .navbar-toggle {
+        display: initial;
+    }
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+
 /* setting brand text style */
 .brand-text{
     color: #e6e8e9;
