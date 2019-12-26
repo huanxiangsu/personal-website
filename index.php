@@ -28,6 +28,11 @@
     <!-- Semantic UI -->
     <!-- <link rel="stylesheet" type="text/css" href="lib/semantic_ui/semantic.min.copy.css">
     <script src="lib/semantic_ui/semantic.min.copy.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/sidebar.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/menu.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/image.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/item.min.css">
+    <script src="lib/semantic_ui/sidebar.min.js"></script>
 
     <!-- my source code -->
     <link rel="stylesheet" type="text/css" href = "CSS/homePage.css">
@@ -38,7 +43,7 @@
 <body id="main">
 
 <!-- ui sidebar -->
-<!-- <div class="ui sidebar vertical inverted menu left overlay">
+<div class="ui sidebar vertical inverted menu left overlay">
     <div class="item">
         <a class="ui logo icon image" href="./">
             <img src="./images/x10.png">
@@ -50,7 +55,8 @@
     <a class="item">item1</a>
     <a class="item">item2</a>
     <a class="item">item3</a>
-</div> -->
+</div>
+    
 
 <div class="pusher">
 
@@ -448,7 +454,7 @@
                 <div class="col-sm-5 my-text">
                     <p style="font-size:22px; color: rgba(0, 0, 0,0.63);">Contact Me:</p>
                     <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce; margin-left: 33px"></span>Portland, OR</p>
-                    <p><span class="glyphicon glyphicon-phone contact-icon" style="color:rgb(51, 50, 49,0.65)"></span>+1 503-515-1075</p>
+                    <p><span class="glyphicon glyphicon-phone contact-icon" style="color:rgb(51, 50, 49,0.65)"></span>+1 (503)-515-1075</p>
                     <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a></p>
                     <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a></p>
                     <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>     
@@ -463,7 +469,7 @@
                             <input class="form-control" placeholder="Email" type="email" id="comment-email" required>
                         </div>
                     </div>
-                    <textarea class="form-control" placeholder="Optional: Send Me Comment" id="comment-area" rows="6"></textarea><br>
+                    <textarea class="form-control" placeholder="Optional: Your Comment" id="comment-area" rows="6"></textarea><br>
                     <div class="row">
                         <div class="col-sm-12 form-group" style="text-align:right">
                             <p id="comment-response"></p>
