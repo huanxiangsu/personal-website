@@ -46,13 +46,18 @@
 
 
 /* setting brand text style */
-.brand-text{
+.brand-text {
     color: #e6e8e9;
     font-size: 28px;
     font-weight: 530;
     padding: 15px 3px;
     cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media screen and (max-width:767px) {
+    .brand-text {
+        float: right;
+    }
 }
 
 .brand-text:hover {
