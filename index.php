@@ -32,6 +32,8 @@
     <link rel="stylesheet" type="text/css" href="lib/semantic_ui/menu.min.css">
     <link rel="stylesheet" type="text/css" href="lib/semantic_ui/image.min.css">
     <link rel="stylesheet" type="text/css" href="lib/semantic_ui/item.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/icon.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/semantic_ui/header.min.css">
     <script src="lib/semantic_ui/sidebar.min.js"></script>
 
     <!-- my source code -->
@@ -48,13 +50,46 @@
         <a class="ui logo icon image" href="./">
             <img src="./images/x10.png">
         </a>
-        <a href="./">
-            <b style="font-size: 20px;">Xiang</b>
+        <a class="ui-sidebar-header-name" href="./">
+            <b >xiang</b>
         </a>
     </div>
-    <a class="item">item1</a>
-    <a class="item">item2</a>
-    <a class="item">item3</a>
+    <a class="item" id="sidebar-home-a"><b>Home</b></a>
+    <a class="item" id="sidebar-about-a"><b>About Me</b></a>
+    <a class="item" id="sidebar-resume-a"><b>Resume</b></a>
+    <div class="item">
+        <div class="header">Personal</div>
+        <div class="menu">
+            <a class="item" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a>
+            <a class="item" id="sidebar-gallery-a">Gallery</a>
+            <a class="item" id="sidebar-music-a">Music</a>
+            <a class="item" id="sidebar-project-a">Project</a>
+        </div>
+    </div>
+    <a class="item" id="sidebar-contact-a"><b>Contact</b></a>
+    <div class="item">
+        <div class="menu ui-icon-menu">
+            <a class="social-media-link" href="https://twitter.com/" target="_blank">
+                <i class='fab fa-twitter social-media-icon'></i>
+            </a>
+            <a class="social-media-link" href="https://www.facebook.com/" target="_blank">
+                <i class='fab fa-facebook-f social-media-icon'></i>
+            </a>
+            <a class="social-media-link" href="https://web.wechat.com/" target="_blank">
+                <i class='fa fa-wechat social-media-icon'></i>
+            </a>
+            <a class="social-media-link" href="https://www.weibo.com/" target="_blank">
+                <i class='fab fa-weibo social-media-icon'></i>
+            </a>
+            <a class="social-media-link" href="https://im.qq.com/" target="_blank">
+                <i class='fa fa-qq social-media-icon'></i>
+            </a>
+            <a class="social-media-link" href="https://github.com/huanxiangsu" target="_blank">
+                <i class='fab fa-github social-media-icon'></i>
+            </a>
+        </div>
+    </div>
+    
 </div>
     
 
@@ -511,6 +546,7 @@
 </div>
 
 <!-- js sources -->
+<script type="text/javascript" src="JS/my_ui.js"></script>
 <script type="text/javascript" src="JS/gallary.js"></script>
 <script type="text/javascript" src="JS/musicPlayer.js"></script>
 

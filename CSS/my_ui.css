@@ -6,3 +6,37 @@
     width: 50px;
     margin-right: 1em;
 }
+
+.ui.left.sidebar, .ui.right.sidebar {
+    width: 250px;
+}
+
+.ui.menu {
+    font-size: 14px;
+}
+
+.ui-icon-menu a:hover, .ui-icon-menu a:focus, .ui-icon-menu a:visited {
+    text-decoration: none;
+}
+
+.dimmed {
+    cursor: pointer;
+}
+
+.ui-sidebar-header-name {
+    font-size: 25px;
+}
+.ui-sidebar-header-name:hover, .ui-sidebar-header-name:focus, .ui-sidebar-header-name:visited {
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    float: left;
+    margin-right: 25px;
+}
+
+@media (min-width: 768px) {
+    .navbar-toggle {
+        display: initial;
+    }
+}

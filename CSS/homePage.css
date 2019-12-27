@@ -40,16 +40,6 @@
     border: 0px;
 }
 
-.navbar-toggle {
-    float: left;
-    margin-right: 25px;
-}
-
-@media (min-width: 768px) {
-    .navbar-toggle {
-        display: initial;
-    }
-}
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
@@ -1033,7 +1023,7 @@
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 11111;
+    z-index: 9;
     padding: 5px;
     /* opacity: 0; */
 }

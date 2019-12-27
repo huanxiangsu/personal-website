@@ -24,12 +24,6 @@ $(document).ready(function () {
     autoScrollTab();
     homeScrollEffect();
     projectInitialization();
-
-    $('#ui-meau').on('click', function () {
-        $('.ui.sidebar')
-            .sidebar('toggle')
-        ; 
-    });
 });
 
 
