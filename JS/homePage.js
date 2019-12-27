@@ -1,10 +1,12 @@
 var calender_site = false;
+var prevScrollpos = $(document).scrollTop();
 
 $(document).ready(function () {
     $('#main').fadeIn(1650);
 
     window.onscroll = function () {
         scrollTopBtnfading();
+        scrollNavbar();
     };
 
     scrollToTop();
@@ -144,9 +146,9 @@ function sidebar_displayCalender() {
 
 function scrollTopBtnfading() {
     if ($(document).scrollTop() > 100) {
-        $('#scroll-top').fadeIn(1300);
+        $('#scroll-top').fadeIn(800);
     } else {
-        $('#scroll-top').fadeOut(1300); 
+        $('#scroll-top').fadeOut(800); 
     }
 }
 
@@ -156,6 +158,22 @@ function scrollToTop() {
             scrollTop: 0
         }, "slow");
     });
+}
+
+function scrollNavbar() {
+    var currentScrollPos = $(document).scrollTop();
+    if (currentScrollPos > 13) {
+        $('#my-nav').css('background-color', 'rgba(19, 36, 55, 0.95)');
+    } else {
+        $('#my-nav').css('background-color', 'rgba(19, 36, 55, 0.41)');
+    }
+
+    if (prevScrollpos > currentScrollPos) {
+        $('#my-nav').css('top', '0');
+    } else {
+        $('#my-nav').css('top', '-55px');
+    }
+    prevScrollpos = currentScrollPos;
 }
 
 

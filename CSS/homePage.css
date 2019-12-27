@@ -3,24 +3,18 @@
 }
 
 /******************************* Background ****************************/
-.bg {
+.bg1 {
     background-image: url('../images/s5.jpeg');
     background-size: 100% 100%;
     opacity: 0.92;
     padding: 0;
+    height: auto;
 }
 
 .bg2 {
     background-image: url('../images/bg5.jpg');
     background-size: 100% 100%;
-}
-
-.bg1 {
-    /* background-image: url('../images/s1.jpeg'); */
-    /* background-color: #384750; */
-    height: auto;
-    /* margin-top:50px; for fixed top */ 
-
+    
 }
 
 /***************************** navbar *********************************/
@@ -38,10 +32,16 @@
     border-color: #2c3235;
     padding: 1px 15px;
     border: 0px;
+    transition: background-color 0.5s, top 0.5s;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
+}
+
+.navbar-fixed-top {
+    width: 100%;
+    z-index: 9;
 }
 
 

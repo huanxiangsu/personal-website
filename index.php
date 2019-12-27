@@ -94,129 +94,125 @@
     
 
 <div class="pusher">
-
-    <div class="container-fluid bg">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button> -->
-                    <button type="button" class="navbar-toggle" id="ui-meau">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand brand-img-block" href="./">
-                        <img class="brand-img" src="images/x10.png">
-                    </a>
-                    <a class="navbar-brand brand-text" href="./">
-                        xiang
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right" id="myNav">
-                        <li class="active"><a id="home-tab-a" class="tab-link" data-toggle="pill" href="#home">Home</a></li>
-                        <li id="about-tab"><a id="about-tab-a" class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
-                        <li><a id="resume-tab-a" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle tab-link" id="dropdown" href="#">Personal
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="tab-link" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a></li>
-                                <li><a class="tab-link" id="gallery-tab-a" data-toggle="pill" href="#myGallary">Gallery</a></li>
-                                <li><a class="tab-link" id="music-tab-a" data-toggle="pill" href="#myMusic">Music</a></li>
-                                <li id="project-tab"><a id="project-tab-a" class="tab-link" data-toggle="pill" href="#myProject">Projects</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a class="tab-link" id="to-contact" href="#contact">Contact</a></li>
-                
-                        <li>
-                            <ul class="nav navbar-nav social-media-list">
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://twitter.com/" target="_blank">
-                                        <i class='fab fa-twitter social-media-icon'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://www.facebook.com/" target="_blank">
-                                        <i class='fab fa-facebook-f social-media-icon'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://web.wechat.com/" target="_blank">
-                                        <i class='fa fa-wechat social-media-icon'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://www.weibo.com/" target="_blank">
-                                        <i class='fab fa-weibo social-media-icon'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://im.qq.com/" target="_blank">
-                                        <i class='fa fa-qq social-media-icon'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-media-link zoom-effect" href="https://github.com/huanxiangsu" target="_blank">
-                                        <i class='fab fa-github social-media-icon'></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-default navbar-fixed-top" id="my-nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <button type="button" class="navbar-toggle" id="ui-meau">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand brand-img-block" href="./">
+                    <img class="brand-img" src="images/x10.png">
+                </a>
+                <a class="navbar-brand brand-text" href="./">
+                    xiang
+                </a>
             </div>
-        </nav>
 
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" id="myNav">
+                    <li class="active"><a id="home-tab-a" class="tab-link" data-toggle="pill" href="#home">Home</a></li>
+                    <li id="about-tab"><a id="about-tab-a" class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
+                    <li><a id="resume-tab-a" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle tab-link" id="dropdown" href="#">Personal
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="tab-link" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a></li>
+                            <li><a class="tab-link" id="gallery-tab-a" data-toggle="pill" href="#myGallary">Gallery</a></li>
+                            <li><a class="tab-link" id="music-tab-a" data-toggle="pill" href="#myMusic">Music</a></li>
+                            <li id="project-tab"><a id="project-tab-a" class="tab-link" data-toggle="pill" href="#myProject">Projects</a></li>
+                        </ul>
+                    </li>
 
-<!--------------------------------------------- image slide site -------------------------------------->
-
-        <div class="container-fluid bg1">
-            <div class="row">
-                <div class="col-sm-3"></div>
-
-                <div class="col-sm-6">
-                    <!-- Image slide show -->
-                    <div class="imgSlide">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- img -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png" alt="image-1">
-                                </div>
-                                <div class="item">
-                                    <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg" alt="image-2">
-                                </div>
-                                <div class="item">
-                                    <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg" alt="image-4">
-                                </div>
-                            </div>
-                    
-                            <!-- left and right controller -->
-                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3"></div>
+                    <li><a class="tab-link" id="to-contact" href="#contact">Contact</a></li>
+            
+                    <li>
+                        <ul class="nav navbar-nav social-media-list">
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://twitter.com/" target="_blank">
+                                    <i class='fab fa-twitter social-media-icon'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://www.facebook.com/" target="_blank">
+                                    <i class='fab fa-facebook-f social-media-icon'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://web.wechat.com/" target="_blank">
+                                    <i class='fa fa-wechat social-media-icon'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://www.weibo.com/" target="_blank">
+                                    <i class='fab fa-weibo social-media-icon'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://im.qq.com/" target="_blank">
+                                    <i class='fa fa-qq social-media-icon'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-media-link zoom-effect" href="https://github.com/huanxiangsu" target="_blank">
+                                    <i class='fab fa-github social-media-icon'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+<!--------------------------------------------- image slide site -------------------------------------->
+    <div class="container-fluid bg1">
+        <div class="row" style="margin-top:55px;">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+                <!-- Image slide show -->
+                <div class="imgSlide">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- img -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png" alt="image-1">
+                            </div>
+                            <div class="item">
+                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg" alt="image-2">
+                            </div>
+                            <div class="item">
+                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg" alt="image-4">
+                            </div>
+                        </div>
+                
+                        <!-- left and right controller -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div>
+        
     </div>
-    <!-- end top nav and slide show -->
+    <!-- end slide show -->
 
 <!---------------------------------------- content list ---------------------------------------->
 
