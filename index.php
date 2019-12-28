@@ -42,7 +42,7 @@
     <script type="text/javascript" src="JS/homePage.js"></script>
 </head>
 
-<body id="main">
+<body class="pushable" id="main">
 
 <!-- ui sidebar -->
 <div class="ui sidebar vertical inverted menu left overlay">
@@ -121,7 +121,7 @@
                     <li id="about-tab"><a id="about-tab-a" class="tab-link" data-toggle="pill" href="#AboutMe">About</a></li>
                     <li><a id="resume-tab-a" class="tab-link" data-toggle="pill" href="#Resume">Resume</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle tab-link" id="dropdown" href="#">Personal
+                        <a class="dropdown-toggle tab-link" id="dropdown">Personal
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -176,22 +176,22 @@
 <!--------------------------------------------- image slide site -------------------------------------->
     <div class="container-fluid bg1">
         <div class="row" style="margin-top:55px;">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <!-- Image slide show -->
                 <div class="imgSlide">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- img -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/stars.png" alt="image-1">
+                                <img class="myimg img-responsive img-rounded zoom-effect1" src="images/stars.png" alt="image-1">
                             </div>
                             <div class="item">
-                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/p7.jpg" alt="image-2">
+                                <img class="myimg img-responsive img-rounded zoom-effect1" src="images/p7.jpg" alt="image-2">
                             </div>
                             <div class="item">
-                                <img class="myimg img-responsive img-rounded zoom-effect" src="images/p8.jpg" alt="image-4">
+                                <img class="myimg img-responsive img-rounded zoom-effect1" src="images/p8.jpg" alt="image-4">
                             </div>
                         </div>
                 
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
         </div>
         
     </div>
@@ -218,6 +218,7 @@
 
     <div class = "container-fluid bg2 music-bg">
         <div class="row" id="content-top" style="height:30px"></div>
+        <div class="row" id="content-top1" style="height:1px"></div>
 
         <div class="row content">
             <div class="col-sm-1"></div>
@@ -432,7 +433,7 @@
                     <div class="about-me-block">
                         <div class="about-me-header">
                             <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                            <a class="about-me-header-title" id="side-about-id" href="#AboutMe">About Me >></a>
+                            <a class="about-me-header-title" id="side-about-id">About Me >></a>
                         </div>
                         <div class="about-me-img">
                             <img class="myimg img-responsive img-rounded zoom-effect" src="images/x11.jpg">
@@ -448,7 +449,7 @@
                     <div class="about-me-block">
                         <div class="about-me-header">
                             <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                            <a class="about-me-header-title" id="side-project-id" href="#myProject" style="font-size:20px">Recent Projects >></a>
+                            <a class="about-me-header-title" id="side-project-id" style="font-size:20px">Recent Projects >></a>
                         </div>
                         <div class="about-me-content side-project-content">
                         </div>

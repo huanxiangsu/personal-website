@@ -2,7 +2,7 @@ var calender_site = false;
 var prevScrollpos = $(document).scrollTop();
 
 $(document).ready(function () {
-    $('#main').fadeIn(1650);
+    $('#main').fadeIn(2050);
 
     window.onscroll = function () {
         scrollTopBtnfading();
@@ -66,46 +66,54 @@ function getProjects() {
 
 
 function sidebar_displayProjects() {
-    $('#side-project-id').on('click', function (event) {
-        $('#myNav>li, .dropdown-menu>li').removeClass('active');
-        $('.dropdown, #project-tab').addClass('active');
-        $(this).tab('show');
+    // $('#side-project-id').on('click', function (event) {
+    //     $('#myNav>li, .dropdown-menu>li').removeClass('active');
+    //     $('.dropdown, #project-tab').addClass('active');
+    //     $(this).tab('show');
         
-    });
+    // });
 
-    $('#side-project-id').on('shown.bs.tab', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
+    // $('#side-project-id').on('shown.bs.tab', function (event) {
+    //     if (this.hash !== "") {
+    //         event.preventDefault();
+    //         var hash = this.hash;
 
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 200, function () {
-                window.location.hash = hash;
-            });
-        }
+    //         $('html, body').animate({
+    //             scrollTop: $(hash).offset().top
+    //         }, 200, function () {
+    //             window.location.hash = hash;
+    //         });
+    //     }
+    // });
+
+    $('#side-project-id').on('click', function () {
+        $('#project-tab-a').trigger('click');
     });
 }
 
 
 function sidebar_displayAboutMe() {
-    $('#side-about-id').on('click', function (event) {
-        $('#myNav>li, .dropdown-menu>li').removeClass('active');
-        $('#about-tab').addClass('active');
-        $(this).tab('show');
-    });
+    // $('#side-about-id').on('click', function (event) {
+    //     $('#myNav>li, .dropdown-menu>li').removeClass('active');
+    //     $('#about-tab').addClass('active');
+    //     $(this).tab('show');
+    // });
 
-    $('#side-about-id').on('shown.bs.tab', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
+    // $('#side-about-id').on('shown.bs.tab', function (event) {
+    //     if (this.hash !== "") {
+    //         event.preventDefault();
+    //         var hash = this.hash;
 
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 'fast', function () {
-                window.location.hash = hash;
-            });
-        }
+    //         $('html, body').animate({
+    //             scrollTop: $(hash).offset().top
+    //         }, 'fast', function () {
+    //             window.location.hash = hash;
+    //         });
+    //     }
+    // });
+
+    $('#side-about-id').on('click', function () {
+        $('#about-tab-a').trigger('click'); 
     });
 }
 
@@ -123,19 +131,16 @@ function sidebar_displayCalender() {
             $('#myCalender').append(cal);
             calender_site = true;
         }
-
         $(this).tab('show');
-        
-
     });
 
     $('#side-calender-id').on('shown.bs.tab', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
-
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 300, function () {
                 window.location.hash = hash;
             });
@@ -168,12 +173,16 @@ function scrollNavbar() {
         $('#my-nav').css('background-color', 'rgba(19, 36, 55, 0.41)');
     }
 
-    if (prevScrollpos > currentScrollPos) {
-        $('#my-nav').css('top', '0');
+    if (currentScrollPos > 55) {
+        if (prevScrollpos > currentScrollPos) {
+            $('#my-nav').css('top', '0');
+        } else {
+            $('#my-nav').css('top', '-55px');
+        }
+        prevScrollpos = currentScrollPos;
     } else {
-        $('#my-nav').css('top', '-55px');
+        $('#my-nav').css('top', '0');
     }
-    prevScrollpos = currentScrollPos;
 }
 
 
@@ -312,9 +321,9 @@ function autoScrollTab() {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
-
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 450, function () {
                 window.location.hash = hash;
             });
@@ -325,8 +334,9 @@ function autoScrollTab() {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 450, function () {
                 window.location.hash = hash;
             });
@@ -337,8 +347,9 @@ function autoScrollTab() {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 450, function () {
                 window.location.hash = hash;
             });
@@ -349,8 +360,9 @@ function autoScrollTab() {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 450, function () {
                 window.location.hash = hash;
             });
@@ -361,8 +373,9 @@ function autoScrollTab() {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var topHash = "#content-top1";
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(topHash).offset().top
             }, 450, function () {
                 window.location.hash = hash;
             });

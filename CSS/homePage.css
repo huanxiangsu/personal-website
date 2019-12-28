@@ -1,5 +1,6 @@
 #main {
     display: none;
+    /* overflow-x: hidden; */
 }
 
 /******************************* Background ****************************/
@@ -227,6 +228,9 @@
 .tab-link {
     transition: color 0.5s;
 }
+.tab-link:hover {
+    cursor: pointer;
+}
 
 
 
@@ -248,6 +252,11 @@
 .tab-content {
     margin-right: 35px;
 }
+@media screen and (max-width:767px) {
+    .tab-content {
+        margin-bottom: 40px;
+    }
+}
 
 .title-img {
     margin: auto;
@@ -264,6 +273,12 @@
     padding: 25px 100px;
     text-align: center;
 }
+@media screen and (max-width:1000px) {
+    #intro-block {
+        padding: 25px 15px;
+    }
+}
+
 
 .intro-img {
     height: 200px;
@@ -342,6 +357,17 @@
     transform: scale(1.1);
     
 }
+
+.zoom-effect1 {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+.zoom-effect1:hover {
+    transform: scale3d(1.1, 1.1, 2);
+}
+
 
 .zoom-rotate-effect {
     transition: transform 0.3s;
@@ -947,6 +973,7 @@
 
 .side-col {
     padding-right: 0px;
+    padding-left: 0px;
 }
 
 .side-content {
