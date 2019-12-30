@@ -16,7 +16,7 @@ function mainSetupGallery() {
         "data": 'data=gallery',
         'success': function (data) {
             setupGallary(JSON.parse(data));
-            changeGallaryView();
+            // changeGallaryView();
             displayModalInGallery();
         },
         "error": function (xhr, status, error) {
@@ -45,29 +45,40 @@ function setupGallary(imgList) {
         $(this).parent().remove();
     });
 
-    // auto change view2 if width size 1000 .. 1200
-    if ($(window).width() >= 1000 && $(window).width() <= 1200) {
-        view13To2();
-        global_view2 = true;
-    }
+    addChangeGalleryView();
+
+    autoAdjustViews();
 
     // auto change view on resize, no effect if user clicked custom views
     $(window).on('resize', function () {
         if (custom_view_changed === false) {
-            if ($(this).width() >= 1000 && $(this).width() <= 1200) {
-                if (!global_view2) {
-                    view13To2();
-                    global_view2 = true;
-                }
-                
-            } else {
-                if (global_view2) {
-                    view2To13();
-                    global_view2 = false;
-                }
-            }
+            autoAdjustViews();
         }
     });
+}
+
+// change gallery view based on window size.
+function autoAdjustViews() {
+    if ($(window).width() > 1200) {
+        $('#lg3').trigger('click');
+        custom_view_changed = false;
+
+    } else if ($(window).width() >= 992 && $(window).width() <= 1200) {
+        $('#lg2').trigger('click');
+        custom_view_changed = false;
+
+    } else if ($(window).width() > 767 && $(window).width() <= 991) {
+        $('#lg3').trigger('click');
+        custom_view_changed = false;
+
+    } else if ($(window).width() >= 650 && $(window).width() <= 767) {
+        $('#lg2').trigger('click');
+        custom_view_changed = false;
+
+    } else {
+        $('#lg1').trigger('click');
+        custom_view_changed = false;
+    }
 }
 
 function addAllImgToGallary(imgList) {
@@ -87,7 +98,7 @@ function addImgToGallary(src, alt) {
 }
 
 
-function changeGallaryView() {
+function addChangeGalleryView() {
     $('#lg1').on('click', function () {
         custom_view_changed = true;
         $('.gallary-col').css({ 'max-width': '100%', 'flex': '100%' });

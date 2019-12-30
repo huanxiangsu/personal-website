@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/weather/0.0.2/weather.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/weather/0.0.2/weather.min.js"></script> -->
 
     <!-- font awesome: for icons -->
     <link rel="stylesheet" type="text/css"
@@ -18,12 +18,12 @@
     
     <link rel="stylesheet" type="text/css" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!-- moment: for time -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
 
     <!-- howler: for music-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
+    <script type="text/javascript" src="lib/howler.min.js"></script>
     
     <!-- Semantic UI -->
     <!-- <link rel="stylesheet" type="text/css" href="lib/semantic_ui/semantic.min.copy.css">
@@ -176,9 +176,9 @@
 <!--------------------------------------------- image slide site -------------------------------------->
     <div class="container-fluid bg1">
         <div class="row" style="margin-top:55px;">
-            <div class="col-sm-2"></div>
+            <div class="col-md-2"></div>
 
-            <div class="col-sm-8">
+            <div class="col-md-8">
                 <!-- Image slide show -->
                 <div class="imgSlide">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-2"></div>
+            <div class="col-md-2"></div>
         </div>
         
     </div>
@@ -221,8 +221,8 @@
         <div class="row" id="content-top1" style="height:1px"></div>
 
         <div class="row content">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-8 side">
+            <div class="col-md-1"></div>
+            <div class="col-md-8 side">
                 <!-- tab content list -->
                 <div class="tab-content">
 
@@ -428,7 +428,7 @@
     <!--------------------------------------------- side content site -------------------------------------->
 
             <!-- <div class="col-sm-1"></div> -->
-            <div class="col-sm-3 side-col">
+            <div class="col-md-3 side-col">
                 <div class="side-content">
                     <div class="about-me-block">
                         <div class="about-me-header">
@@ -459,7 +459,7 @@
                     <div class="about-me-block">
                         <div class="about-me-header">
                             <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
-                            <a class="about-me-header-title" id="side-calender-id" style="font-size:20px" href="#myCalender">Calender >></a>
+                            <a class="about-me-header-title" id="side-calender-id" style="font-size:20px" href="#myCalender" title="Go to Calender">Calender >></a>
                         </div>
                         <div class="about-me-content">
                             <iframe id="frame-calender"

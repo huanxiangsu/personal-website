@@ -26,6 +26,14 @@ $(document).ready(function () {
     autoScrollTab();
     homeScrollEffect();
     projectInitialization();
+
+    // $(window).on('resize', function () {
+    //     if (window.innerWidth < 930) {
+    //         $('#myNavbar').collapse("hide");
+    //     } else {
+    //         $('#myNavbar').collapse("show");
+    //     }
+    // });
 });
 
 
