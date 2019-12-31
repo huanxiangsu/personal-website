@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Xiang's Home</title>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script src="lib/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap-3.4.1-dist/css/bootstrap.min.css">
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/weather/0.0.2/weather.min.js"></script> -->
 
@@ -54,19 +54,19 @@
             <b >xiang</b>
         </a>
     </div>
-    <a class="item" id="sidebar-home-a"><b>Home</b></a>
-    <a class="item" id="sidebar-about-a"><b>About Me</b></a>
-    <a class="item" id="sidebar-resume-a"><b>Resume</b></a>
+    <a class="item" id="sidebar-home-a"><i class='fas fa-home ui-home'></i><b>Home</b></a>
+    <a class="item" id="sidebar-about-a"><i class='far fa-address-book ui-home' style="margin-right: 23px;margin-left: 3px;"></i><b>About Me</b></a>
+    <a class="item" id="sidebar-resume-a"><i class='far fa-address-card ui-home'></i><b>Resume</b></a>
     <div class="item">
-        <div class="header">Personal</div>
+        <div class="header"><i class='far fa-smile-beam ui-home' style="margin-right: 22px;"></i>Personal</div>
         <div class="menu">
-            <a class="item" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a>
-            <a class="item" id="sidebar-gallery-a">Gallery</a>
-            <a class="item" id="sidebar-music-a">Music</a>
-            <a class="item" id="sidebar-project-a">Project</a>
+            <a class="item ui-sub-item" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog<i class='fab fa-wordpress ui-sidebar-left-icon'></i></a>
+            <a class="item ui-sub-item" id="sidebar-gallery-a">Gallery<!--<i class='fas fa-images ui-sidebar-left-icon'></i>--></a>
+            <a class="item ui-sub-item" id="sidebar-music-a">Music<!--<i class='fas fa-music ui-sidebar-left-icon'></i>--></a>
+            <a class="item ui-sub-item" id="sidebar-project-a">Project<!--<i class='fas fa-book ui-sidebar-left-icon'></i>--></a>
         </div>
     </div>
-    <a class="item" id="sidebar-contact-a"><b>Contact</b></a>
+    <a class="item" id="sidebar-contact-a"><i class='far fa-list-alt ui-home'></i><b>Contact</b></a>
     <div class="item">
         <div class="menu ui-icon-menu">
             <a class="social-media-link" href="https://twitter.com/" target="_blank">
