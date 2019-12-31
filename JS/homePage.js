@@ -299,6 +299,7 @@ function displayGlobalModal() {
         $('#gallary-img-modal').modal();
         // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(1)' });
         $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-in');
+        // $('#gallary-img-modal').modal(); 
     });
 
     $('.modal-close-btn').on('click', function () {
@@ -307,7 +308,7 @@ function displayGlobalModal() {
         $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-out');
         setTimeout(function () {
             $('#gallary-img-modal').modal('hide');
-        }, 700);
+        }, 750);
     });
 
     $('#gallary-img-modal').on('shown.bs.modal', function () {

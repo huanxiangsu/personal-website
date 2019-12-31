@@ -174,6 +174,7 @@ function displayModalInGallery() {
             $('#gallary-img-modal').modal();
             // $('.modal-img, #modal-img-caption, .modal-close-btn').css({ 'transform': 'scale(1)' });
             $('.modal-img, #modal-img-caption, .modal-close-btn').addClass('modal-zoom-in');
+            // $('#gallary-img-modal').modal();
         } else {
             console.log('Error! Cannot find image source!');
         }
