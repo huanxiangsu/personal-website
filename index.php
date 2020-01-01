@@ -60,7 +60,7 @@
     <div class="item">
         <div class="header"><i class='far fa-smile-beam ui-home' style="margin-right: 22px;"></i>Personal</div>
         <div class="menu">
-            <a class="item ui-sub-item" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog<i class='fab fa-wordpress ui-sidebar-left-icon'></i></a>
+            <a class="item ui-sub-item" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog<i class='fab fa-wordpress ui-sidebar-right-icon'></i></a>
             <a class="item ui-sub-item" id="sidebar-gallery-a">Gallery<!--<i class='fas fa-images ui-sidebar-left-icon'></i>--></a>
             <a class="item ui-sub-item" id="sidebar-music-a">Music<!--<i class='fas fa-music ui-sidebar-left-icon'></i>--></a>
             <a class="item ui-sub-item" id="sidebar-project-a">Project<!--<i class='fas fa-book ui-sidebar-left-icon'></i>--></a>
