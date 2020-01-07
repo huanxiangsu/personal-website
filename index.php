@@ -125,7 +125,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="tab-link" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://kara.myftp.org/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a></li>
+                            <li><a class="tab-link" href="<?php if ($_SERVER['HTTP_HOST'] == "web.cecs.pdx.edu"){echo "http://karanokara.com/xiang/blog";} else{echo "../blog/";} ?>" target="_blank">Blog</a></li>
                             <li><a class="tab-link" id="gallery-tab-a" data-toggle="pill" href="#myGallary">Gallery</a></li>
                             <li><a class="tab-link" id="music-tab-a" data-toggle="pill" href="#myMusic">Music</a></li>
                             <li id="project-tab"><a id="project-tab-a" class="tab-link" data-toggle="pill" href="#myProject">Projects</a></li>
