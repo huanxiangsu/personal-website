@@ -350,16 +350,16 @@
                             </div>
                             <div class="music-control-bars">
                                 <div class="control-inner">
-                                    <div class="btn btn-music" id="prev-btn"><i class="fas fa-step-backward"></i></div>
-                                    <div class="btn btn-music" id="play-btn"><i class="fas fa-play"></i></div>
-                                    <div class="btn btn-music" id="pause-btn"><i class="fas fa-pause"></i></div>
-                                    <div class="btn btn-music" id="next-btn"><i class="fas fa-step-forward"></i></div>
+                                    <div class="btn btn-music" id="prev-btn" title="Previous"><i class="fas fa-step-backward"></i></div>
+                                    <div class="btn btn-music" id="play-btn" title="Play"><i class="fas fa-play"></i></div>
+                                    <div class="btn btn-music" id="pause-btn" title="Pause"><i class="fas fa-pause"></i></div>
+                                    <div class="btn btn-music" id="next-btn" title="Next"><i class="fas fa-step-forward"></i></div>
                                     
                                 </div>
-                                <div class="btn btn-music" id="list-btn"><i class="fas fa-list-ul"></i></div>
-                                <div class="btn btn-music" id="sequence-btn"><i class="fas fa-sync"></i></div>
-                                <div class="btn btn-music" id="random-btn"><i class="fas fa-random"></i></div>
-                                <div class="btn btn-music" id="redo-btn"><i class="fas fa-redo"></i></div>
+                                <div class="btn btn-music" id="list-btn" title="Show Playlist"><i class="fas fa-list-ul"></i></div>
+                                <div class="btn btn-music" id="sequence-btn" title="Loop"><i class="fas fa-sync"></i></div>
+                                <div class="btn btn-music" id="random-btn" title="Shuffle"><i class="fas fa-random"></i></div>
+                                <div class="btn btn-music" id="redo-btn" title="Single"><i class="fas fa-redo"></i></div>
                             </div>
 
                             <div class="playlist-block">
