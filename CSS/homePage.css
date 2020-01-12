@@ -270,7 +270,8 @@
 }
 
 .tab-content {
-    margin-right: 35px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 @media screen and (max-width:991px) {
     .tab-content {
@@ -1032,6 +1033,10 @@
     padding-right: 25px;
     /* background-color: rgba(245, 234, 205, 0.164); */
     background-color: rgba(235, 236, 240, 0.5);
+}
+
+.side-logo {
+    width: 250px;
 }
 
 .about-me-header {

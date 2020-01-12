@@ -222,7 +222,7 @@
 
         <div class="row content">
             <div class="col-md-1"></div>
-            <div class="col-md-8 side">
+            <div class="col-md-8">
                 <!-- tab content list -->
                 <div class="tab-content">
 
@@ -269,7 +269,7 @@
                         
                         </div>
 
-                        <div class="row" style="height:100px"></div>
+                        <div class="row" style="height:20px"></div>
 
                     </div>
                     <!-- End Home tab -->
@@ -436,7 +436,7 @@
                             <a class="about-me-header-title" id="side-about-id">About Me >></a>
                         </div>
                         <div class="about-me-img">
-                            <img class="myimg img-responsive img-rounded zoom-effect" src="images/x11.jpg">
+                            <img class="img-responsive zoom-effect side-logo" src="images/x11.jpg">
                         </div>
                         <div class="about-me-content">
                             Name: Huanxiang Su <br>
