@@ -270,8 +270,8 @@
 }
 
 .tab-content {
-    padding-left: 22px;
-    padding-right: 22px;
+    /* padding-left: 22px;
+    padding-right: 22px; */
 }
 @media screen and (max-width:991px) {
     .tab-content {
