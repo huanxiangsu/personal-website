@@ -432,7 +432,7 @@
 .gallary {
     display: flex;
     flex-wrap: wrap;
-    border: 30px solid transparent;
+    border: 30px solid white;
     border-image-source: url("../images/border11.png");
     border-image-slice: 53;
     border-image-repeat: round;
