@@ -13,5 +13,12 @@
         "img": "./images/sift.png",
         "detail_link": "https://github.com/huanxiangsu/my-sift",
         "demo_link": null
+    },
+    {
+        "title": "WordPress Blog",
+        "description": "My personal blog",
+        "img": "./images/blog.png",
+        "detail_link": "http://xiang.karanokara.com/blog/",
+        "demo_link": "http://xiang.karanokara.com/blog/"
     }
 ]
