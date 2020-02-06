@@ -451,7 +451,7 @@
                             <i class="far fa-hand-point-right about-me-header-icon zoom-effect"></i>
                             <a class="about-me-header-title" id="side-project-id" style="font-size:20px">Recent Projects >></a>
                         </div>
-                        <div class="about-me-content side-project-content">
+                        <div class="about-me-content side-project-content" style="text-align:left;">
                         </div>
                     </div>
                     <hr>
