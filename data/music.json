@@ -1,5 +1,12 @@
 [
     {
+        "title": "月光の雲海",
+        "artist": "久石譲",
+        "img": "./images/castle1.jpg",
+        "file": "./music/久石譲 - 月光の雲海.mp3",
+        "howl": null
+    },
+    {
         "title": "Running Out",
         "artist": "Demo 1",
         "img": "#",
