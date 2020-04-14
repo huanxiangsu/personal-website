@@ -967,15 +967,20 @@
 }
 
 .project-body-footer {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+    margin-left: -3px;
+    margin-right: -3px;
 }
 
-.project-body-footer a button{
-    margin-bottom: 7px;
+.project-body-footer a .btn {
+    width: 100%;
 }
 
-.project-body-footer-detail {
-    margin-right: 15px;
+.project-body-footer-link {
+    float: left;
+    width: 50%;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .popover {

@@ -485,16 +485,16 @@ function setupProjectContent(projectList) {
             a_row += '<h3 class="project-body-title">' + cur.title + '</h3>';
             a_row += '<p class="project-body-content">' + cur.description + '</p>';
             
-            a_row += '<div class="project-body-footer">';
+            a_row += '<div class="project-body-footer clearfix">';
             if (cur.detail_link) {
-                a_row += '<a class="project-body-footer-detail" href="' + cur.detail_link + '" target="_blank"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>\r';
+                a_row += '<a class="project-body-footer-link" href="' + cur.detail_link + '" target="_blank"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>\r';
             } else {
-                a_row += '<a class = "project-body-footer-detail" data-toggle="popover" title="No Detail" data-content="Detail not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>';
+                a_row += '<a class = "project-body-footer-link" data-toggle="popover" title="No Detail" data-content="Detail not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>';
             }
             if (cur.demo_link != null) {
-                a_row += '<a class="project-body-footer-demo" href="' + cur.demo_link + '" target="_blank"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+                a_row += '<a class="project-body-footer-link" href="' + cur.demo_link + '" target="_blank"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
             } else {
-                a_row += '<a class="project-body-footer-demo" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+                a_row += '<a class="project-body-footer-link" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
             }
             a_row += '</div></div></div></div>';
         }
