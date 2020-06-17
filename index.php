@@ -11,8 +11,13 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="icon" href='./images/x10.png' />
+    <link rel="apple-touch-icon" href='./images/X_white.png' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta
+        name="Xiang"
+        content="Xiang's Home"
+    />
     <title>Xiang's Home</title>
 
     <script src="lib/jquery-3.4.1.min.js"></script>
@@ -105,23 +110,22 @@
 <div class="pusher">
     <nav class="navbar navbar-default navbar-fixed-top" id="my-nav">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header my-navbar-header">
                 <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button> -->
-                <button type="button" class="navbar-toggle" id="ui-meau">
+                <button type="button" class="navbar-toggle my-navbar-toggle" id="ui-meau">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand brand-img-block" href="./">
-                    <img class="brand-img" src="images/x10.png">
+                    <!-- <img class="brand-img" src="images/x10.png"> -->
+                    <img class="brand-img" src="images/X_white.png">
                 </a>
-                <a class="navbar-brand brand-text" href="./">
-                    xiang
-                </a>
+                <a class="navbar-brand brand-text" href="./">xiang</a>
             </div>
 
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -184,10 +188,9 @@
 
 <!--------------------------------------------- image slide site -------------------------------------->
     <div class="container-fluid bg1">
-        <div class="row" style="margin-top:55px;">
-            <div class="col-md-2"></div>
+        <div class="row" style="margin-top:55px; display: flex;">
 
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-9 col-sm-10 col-xs-11" style="margin: auto;">
                 <!-- Image slide show -->
                 <div class="imgSlide">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -217,7 +220,6 @@
                 </div>
             </div>
 
-            <div class="col-md-2"></div>
         </div>
         
     </div>
@@ -230,8 +232,7 @@
         <div class="row" id="content-top1" style="height:1px"></div>
 
         <div class="row content">
-            <div class="col-md-1"></div>
-            <div class="col-md-8">
+            <div class="col-md-9 my-col-md">
                 <!-- tab content list -->
                 <div class="tab-content">
 
@@ -239,40 +240,40 @@
 
                     <div id="home" class="tab-pane fade in active">
                         <div class="row home-row">
-                            <div class="col-sm-6">
+                            <div class="col-xs-6">
                                 <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/p9.jpg" alt="Sunset Sky">
                             </div>
-                            <div class="col-sm-6 intro-text">
-                                <h2 class="home-sentence">Happiness is a way station between too much and too little.</h2>
+                            <div class="col-xs-6 intro-text">
+                                <div class="home-sentence">Happiness is a way station between too much and too little.</div>
                             </div>
                         </div>
 
                         <div class="row home-row">
                             <hr>
-                            <div class="col-sm-6 intro-text">
-                                <h2 class="home-sentence">When the whole world is about to rain, let's make it clear in our heart together.</h2>
+                            <div class="col-xs-6 intro-text">
+                                <div class="home-sentence">When the whole world is about to rain, let's make it clear in our heart together.</div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-xs-6">
                                 <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c7.jpg" alt="Sky with sun">
                             </div>
                         </div>
                         
                         <div class="row home-row">
                             <hr>
-                            <div class="col-sm-6">
+                            <div class="col-xs-6">
                                 <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c4.jpg" alt="Lantern with Glim">
                             </div>
-                            <div class="col-sm-6 intro-text">
-                                <h2 class="home-sentence">All the times run into the past, yet the past is not full.</h2>
+                            <div class="col-xs-6 intro-text">
+                                <div class="home-sentence">All the times run into the past, yet the past is not full.</div>
                             </div>
                         </div>
                         
                         <div class="row home-row">
                             <hr>
-                            <div class="col-sm-6 intro-text">
-                                <h2 class="home-sentence">If you are doing your best, you will not have to worry about failure.</h2>   
+                            <div class="col-xs-6 intro-text">
+                                <div class="home-sentence">If you are doing your best, you will not have to worry about failure.</div>   
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-xs-6">
                                 <img class="home-img myimg img-responsive img-rounded opacity-effect" src="images/c1.jpg" alt="Adventure Hill">
                             </div>
                         
@@ -487,8 +488,8 @@
 
 <!--------------------------------------------- Bottom contact site -------------------------------------->
 
-    <div id="contact" class="container-fluid">
-        <div class="container">
+    <div id="contact">
+        <div class="container-fluid">
             <h2 class="text-center my-text-title">CONTACT</h2>
             <div class="row">
 
@@ -498,15 +499,15 @@
                     <p><span class="glyphicon glyphicon-phone contact-icon" style="color:rgb(51, 50, 49,0.65)"></span>+1 (503)-515-1075</p>
                     <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a></p>
                     <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a></p>
-                    <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>     
+                    <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>
                 </div>
 
                 <div class="col-sm-7">
                     <div class="row">
-                        <div class="col-sm-6 form-group">
+                        <div class="col-xs-6 form-group">
                             <input class="form-control" placeholder="Name" type="text" id="comment-name" required>
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-xs-6 form-group">
                             <input class="form-control" placeholder="Email" type="email" id="comment-email" required>
                         </div>
                     </div>
@@ -523,8 +524,8 @@
             </div>
             <hr>
             <div class="my-text text-center">
-                <p class="text-center">Copyright © 2019 Huanxiang Su - All Rights Reserved</p>
-                <p class="text-center">Last Modified: 12/14/2019</p>
+                <a href='./'><img class="brand-img" src="images/X_black.png"></a>
+                <p>Copyright © 2019-2020 Huanxiang Su - All Rights Reserved</p>
             </div>
             
         </div>

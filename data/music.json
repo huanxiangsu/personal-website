@@ -7,28 +7,6 @@
         "howl": null
     },
     {
-        "title": "Running Out",
-        "artist": "Demo 1",
-        "img": "#",
-        "file": "./music/running_out.mp3",
-        "howl": null
-    },
-    {
-        "title": "80s vibe",
-        "artist": "Demo 2",
-        "img": "#",
-        "file": "./music/80s_vibe.mp3",
-        "howl": null
-    },
-    {
-        "title": "Rave Digger",
-        "artist": "Demo 3",
-        "img": "#",
-        "file": "./music/rave_digger.mp3",
-        "howl": null
-    },
-
-    {
         "title": "Wildest Dreams",
         "artist": "Taylor Swift",
         "img": "./images/c1.jpg",
@@ -68,6 +46,13 @@
         "artist": "周笔畅",
         "img": "./images/song3.jpeg",
         "file": "./music/周笔畅 - 无羁.mp3",
+        "howl": null
+    },
+    {
+        "title": "冬眠",
+        "artist": "司南",
+        "img": "./images/song4.jpeg",
+        "file": "./music/司南 - 冬眠.mp3",
         "howl": null
     }
 ]

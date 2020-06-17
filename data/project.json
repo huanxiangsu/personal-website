@@ -9,16 +9,30 @@
 
     {
         "title": "SIFT",
-        "description": "Scale-Invariant Feature Transform Algorithm for image feature detection",
+        "description": "Scale-Invariant Feature Transform Algorithm Implemented in Python for image feature detection",
         "img": "./images/sift.png",
         "detail_link": "https://github.com/huanxiangsu/my-sift",
         "demo_link": null
     },
     {
         "title": "WordPress Blog",
-        "description": "My personal blog",
-        "img": "./images/blog.png",
+        "description": "My personal WordPress blog, showing personal interests",
+        "img": "./images/blog.jpg",
         "detail_link": "http://xiang.karanokara.com/blog/",
         "demo_link": "http://xiang.karanokara.com/blog/"
+    },
+    {
+        "title": "Anime Dashboard",
+        "description": "Anime/Manga Dashboard using React, search your favorite and view popular and latest animes",
+        "img": "./images/anime-dashboard.png",
+        "detail_link": "https://github.com/huanxiangsu/react-anime-dashboard",
+        "demo_link": "http://xiang.karanokara.com/anime-dashboard"
+    },
+    {
+        "title": "Network Traffic Playback",
+        "description": "Asynchronous Server Blaster developed by our capstone team for network traffic playback testing.",
+        "img": "./images/traffic_playback.png",
+        "detail_link": "https://github.com/huanxiangsu/traffic-playback",
+        "demo_link": "https://github.com/huanxiangsu/traffic-playback"
     }
 ]

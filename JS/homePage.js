@@ -37,42 +37,6 @@ $(document).ready(function () {
 });
 
 
-
-function getProjects() {
-    var projectList = $('.project-body');
-    // console.log(projectList);
-    if (projectList.length === 0) {
-        $('.side-project-content').append('<h5>None</h5>');
-        return;
-    }
-    var len = projectList.length - 1;
-
-    // add at most three projects to the side project content.
-    for (var i = 0; i < 3; ++i) {
-        if (len < 0) {
-            return;
-        }
-        var p = projectList.eq(len);
-        var title = p.children('.project-body-title').eq(0).text();
-        var content = p.children('.project-body-content').eq(0).text();
-        var link = p.children('.project-body-footer').eq(0)
-            .children('.project-body-footer-detail').eq(0)
-            .attr('href');
-        // console.log(title + ' + ' + content + ' + ' + link);
-
-        var a = $("<a></a>");
-        a.text('>> ' + title + ' - ' + content);
-        a.attr({
-            'class': 'side-project-content-item',
-            'href': link,
-            'target': '_blank',
-        });
-        $('.side-project-content').append(a);
-        --len;
-    }
-}
-
-
 function sidebar_displayProjects() {
     // $('#side-project-id').on('click', function (event) {
     //     $('#myNav>li, .dropdown-menu>li').removeClass('active');
@@ -458,52 +422,91 @@ function loadProjectContent() {
 }
 
 function setupProjectContent(projectList) {
-    var numRows = Math.ceil(projectList.length / 3);
-    var numLastRow = projectList.length % 3;
-    var index;
+    var numRows = projectList.length;
+    var a_row = '<div class="row project-row">\r';
     for (var i = 0; i < numRows; ++i) {
-        a_row = '<div class="row">\r';
-        for (var j = 0; j < 3; ++j) {
-            index = i * 3 + j;
-            if (index === projectList.length) {
-                break;
-            }
-            cur = projectList[index];
-
-            a_row += '<div class="col-sm-4">';
-            a_row += '<div class="project-block">';
-            a_row += '<div class="project-img">';
-            if (cur.demo_link) {
-                a_row += '<a href="' + cur.demo_link + '" target="_blank">';
-            } else {
-                a_row += '<a>';
-            }
-            a_row += '<img class="myimg img-responsive zoom-effect" src="' + cur.img + '">';
-            a_row += '</a></div>';
-
-            a_row += '<div class="project-body">';
-            a_row += '<h3 class="project-body-title">' + cur.title + '</h3>';
-            a_row += '<p class="project-body-content">' + cur.description + '</p>';
-            
-            a_row += '<div class="project-body-footer clearfix">';
-            if (cur.detail_link) {
-                a_row += '<a class="project-body-footer-link" href="' + cur.detail_link + '" target="_blank"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>\r';
-            } else {
-                a_row += '<a class = "project-body-footer-link" data-toggle="popover" title="No Detail" data-content="Detail not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>';
-            }
-            if (cur.demo_link != null) {
-                a_row += '<a class="project-body-footer-link" href="' + cur.demo_link + '" target="_blank"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
-            } else {
-                a_row += '<a class="project-body-footer-link" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
-            }
-            a_row += '</div></div></div></div>';
+        let cur = projectList[i];
+        a_row += '<div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 project-wrapper">';
+        a_row += '<div class="project-block">';
+        
+        // first block - img, title, description
+        a_row += '<div>';
+        a_row += '<div class="project-img">';
+        if (cur.demo_link) {
+            a_row += '<a href="' + cur.demo_link + '" target="_blank">';
+        } else {
+            a_row += '<a>';
         }
-        a_row += '</div>';
-        $('#myProject').append(a_row);
+        a_row += '<img class="myimg img-responsive zoom-effect" src="' + cur.img + '">';
+        a_row += '</a></div>';
+
+        a_row += '<div class="project-body">';
+        a_row += '<h3 class="project-body-title">' + cur.title + '</h3>';
+        a_row += '<p class="project-body-content">' + cur.description + '</p>';
+        a_row += '</div></div>';
+
+        // second block - footer: details and demo button
+        a_row += '<div class="project-body-footer clearfix">';
+        if (cur.detail_link) {
+            a_row += '<a class="project-body-footer-link" href="' + cur.detail_link + '" target="_blank"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>\r';
+        } else {
+            a_row += '<a class = "project-body-footer-link" data-toggle="popover" title="No Detail" data-content="Detail not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-primary" type="button">Details &gt;&gt;</button></a>';
+        }
+        if (cur.demo_link != null) {
+            a_row += '<a class="project-body-footer-link" href="' + cur.demo_link + '" target="_blank"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+        } else {
+            a_row += '<a class="project-body-footer-link" data-toggle="popover" title="No Demo" data-content="Demo not available" data-placement="bottom" data-trigger="hover"><button class="btn btn-danger" type="button">Demo &gt;&gt;</button></a>';
+        }
+        a_row += '</div></div></div>';
     }
-
+    a_row += '</div>';
+    $('#myProject').append(a_row);
     $('[data-toggle="popover"').popover();
+}
 
+
+function getProjects() {
+    var projectList = $('.project-block');
+    // console.log(projectList);
+    if (projectList.length === 0) {
+        $('.side-project-content').append('<p>None</p>');
+        return;
+    }
+    
+    let ul = $('<ul style="padding-left: 20px"></ul>');
+    var len = projectList.length - 1;
+
+    // add at most three projects to the side project content.
+    for (var i = 0; i < 5; ++i) {
+        if (len < 0) {
+            return;
+        }
+        var p = projectList.eq(len).children().eq(0).children('.project-body').eq(0);
+        var footer = projectList.eq(len).children('.project-body-footer').eq(0);
+        var title = p.children('.project-body-title').eq(0).text();
+        var content = p.children('.project-body-content').eq(0).text();
+        var link = footer
+            .children('.project-body-footer-link')
+            .eq(0)
+            .attr('href');
+        // console.log(title + ' + ' + content + ' + ' + link);
+
+        if (content.length > 51) {
+            content = content.substr(0, 50) + '...';
+        }
+        var a = $('<a></a>');
+        a.text('>> ' + title + ' - ' + content);
+        a.attr({
+            class: 'side-project-content-item',
+            href: link,
+            target: '_blank',
+        });
+        let li = $('<li></li>');
+        li.append(a);
+        ul.append(li);
+        --len;
+    }
+    $('.side-project-content').append(ul);
 }
 
 

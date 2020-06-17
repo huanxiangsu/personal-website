@@ -71,7 +71,7 @@ function autoAdjustViews() {
         $('#lg3').trigger('click');
         custom_view_changed = false;
 
-    } else if ($(window).width() >= 650 && $(window).width() <= 767) {
+    } else if ($(window).width() >= 561 && $(window).width() <= 767) {
         $('#lg2').trigger('click');
         custom_view_changed = false;
 

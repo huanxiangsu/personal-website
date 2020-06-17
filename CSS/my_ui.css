@@ -31,15 +31,7 @@
 }
 
 .navbar-toggle {
-    float: left;
-    margin-right: 25px;
     transition: 0.3s;
-}
-
-@media (min-width: 768px) {
-    .navbar-toggle {
-        display: initial;
-    }
 }
 
 .ui-sub-item {
