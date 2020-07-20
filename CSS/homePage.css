@@ -1065,6 +1065,8 @@
 }
 
 .contact-icon {
+    width: 30px;
+    text-align: center;
     font-size: 24px;
     margin-right: 10px;
     margin-left: 30px;

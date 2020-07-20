@@ -27,11 +27,8 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/weather/0.0.2/weather.min.js"></script> -->
 
     <!-- font awesome: for icons -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    
-    <link rel="stylesheet" type="text/css" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/fontawesome-5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!-- moment: for time -->
     <script type="text/javascript" src="lib/moment.min.js"></script>
@@ -495,13 +492,14 @@
 
                 <div class="col-sm-5 my-text">
                     <p style="font-size:22px; color: rgba(0, 0, 0,0.63);">Contact Me:</p>
-                    <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce; margin-left: 33px"></span>Portland, OR</p>
+                    <p><span class="fas fa-map-marker-alt contact-icon" style="color:#16a9ce"></span>Portland, OR</p>
                     <p><span class="glyphicon glyphicon-phone contact-icon" style="color:rgb(51, 50, 49,0.65)"></span>+1 (503)-515-1075</p>
-                    <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a></p>
-                    <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a></p>
+                    <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)" ></span><a href="mailto:xiang625764563@gmail.com">xiang625764563@gmail.com</a> (Primary)</p>
+                    <p><span class="fas fa-envelope contact-icon" style="color:rgb(240, 120, 84)"></span><a href="mailto:huanxsu@pdx.edu">huanxsu@pdx.edu</a> (School)</p>
                     <p><span class="fa fa-wechat contact-icon" style="color:#2dc102"></span>xx131456286</p>
+                    <p><span class="fab fa-instagram contact-icon" style="color:rgb(222, 143, 224)"></span>sxx_xiang</p>
                 </div>
-
+                               
                 <div class="col-sm-7">
                     <div class="row">
                         <div class="col-xs-6 form-group">
