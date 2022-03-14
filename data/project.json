@@ -4,7 +4,7 @@
         "description": "A cool adventure game!",
         "img": "./images/frupal1.png",
         "detail_link": "https://github.com/huanxiangsu/Frupal",
-        "demo_link": "http://xiang.karanokara.com/frupal/"
+        "demo_link": "http://xiang.karanokara.cc/frupal/"
     },
 
     {
@@ -19,14 +19,14 @@
         "description": "My personal WordPress blog, showing personal interests",
         "img": "./images/blog.jpg",
         "detail_link": "http://xiang.karanokara.com/blog/",
-        "demo_link": "http://xiang.karanokara.com/blog/"
+        "demo_link": "http://xiang.karanokara.cc/blog/"
     },
     {
         "title": "Anime Dashboard",
         "description": "Anime/Manga Dashboard using React, search your favorite and view popular and latest animes",
         "img": "./images/anime-dashboard.png",
         "detail_link": "https://github.com/huanxiangsu/react-anime-dashboard",
-        "demo_link": "http://xiang.karanokara.com/anime-dashboard"
+        "demo_link": "http://xiang.karanokara.cc/anime-dashboard"
     },
     {
         "title": "Network Traffic Playback",
