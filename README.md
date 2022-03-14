@@ -1,3 +1,3 @@
 # personal-website
 
-visit at http://xiang.karanokara.com/home/
+visit at http://xiang.karanokara.cc/home/
